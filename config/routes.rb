@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  get("/", { :controller => "landlords", :action => "index" })
 
   # Routes for the Category resource:
 
