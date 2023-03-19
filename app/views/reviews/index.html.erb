@@ -1,0 +1,198 @@
+<div>
+  <div>
+    <h1>
+      List of all reviews
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new review
+    </h2>
+
+    <form action="/insert_review" method="post">
+      <div>
+        <label for="stars_box">
+          Stars
+        </label>
+
+        <input type="text" id="stars_box" name="query_stars">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="datetime-local" id="date_box" name="query_date">
+      </div>
+
+      <div>
+        <label for="text_box">
+          Text
+        </label>
+
+        <textarea id="text_box" name="query_text" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="useful_box">
+          Useful
+        </label>
+
+        <input type="text" id="useful_box" name="query_useful">
+      </div>
+
+      <div>
+        <label for="cool_box">
+          Cool
+        </label>
+
+        <input type="text" id="cool_box" name="query_cool">
+      </div>
+
+      <div>
+        <label for="landlord_id_box">
+          Landlord
+        </label>
+
+        <input type="text" id="landlord_id_box" name="query_landlord_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city">
+      </div>
+
+      <button>
+        Create review
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Stars
+        </th>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          Text
+        </th>
+
+        <th>
+          Useful
+        </th>
+
+        <th>
+          Cool
+        </th>
+
+        <th>
+          Landlord
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_reviews.each do |a_review| %>
+      <tr>
+        <td>
+          <%= a_review.id %>
+        </td>
+
+        <td>
+          <%= a_review.stars %>
+        </td>
+
+        <td>
+          <%= a_review.date %>
+        </td>
+
+        <td>
+          <%= a_review.text %>
+        </td>
+
+        <td>
+          <%= a_review.useful %>
+        </td>
+
+        <td>
+          <%= a_review.cool %>
+        </td>
+
+        <td>
+          <%= a_review.landlord_id %>
+        </td>
+
+        <td>
+          <%= a_review.user_id %>
+        </td>
+
+        <td>
+          <%= a_review.city %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_review.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_review.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/reviews/<%= a_review.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

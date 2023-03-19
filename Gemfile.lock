@@ -1,7 +1,6 @@
 GIT
-  remote: https://github.com/firstdraft/draft_generators.git
-  revision: 2635764769e293ef79d8183392cd4e8ae17cc2c4
-  branch: winter-2020
+  remote: https://github.com/firstdraft/draft_generators
+  revision: 23069b562615e42e04c3343e330846594ce51fdb
   specs:
     draft_generators (0.0.3)
       devise
@@ -118,7 +117,7 @@ GEM
       rexml
     crass (1.0.6)
     debug_inspector (1.1.0)
-    devise (4.8.1)
+    devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -261,9 +260,9 @@ GEM
       ffi (~> 1.0)
     rchardet (1.8.0)
     regexp_parser (2.4.0)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.5)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)

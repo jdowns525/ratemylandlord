@@ -1,0 +1,230 @@
+<div>
+  <div>
+    <h1>
+      List of all landlords
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new landlord
+    </h2>
+
+    <form action="/insert_landlord" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="neighborhood_box">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_box" name="query_neighborhood">
+      </div>
+
+      <div>
+        <label for="address_box">
+          Address
+        </label>
+
+        <input type="text" id="address_box" name="query_address">
+      </div>
+
+      <div>
+        <label for="state_box">
+          State
+        </label>
+
+        <input type="text" id="state_box" name="query_state">
+      </div>
+
+      <div>
+        <label for="postal_code_box">
+          Postal code
+        </label>
+
+        <input type="text" id="postal_code_box" name="query_postal_code">
+      </div>
+
+      <div>
+        <label for="latitude_box">
+          Latitude
+        </label>
+
+        <input type="text" id="latitude_box" name="query_latitude">
+      </div>
+
+      <div>
+        <label for="longitude_box">
+          Longitude
+        </label>
+
+        <input type="text" id="longitude_box" name="query_longitude">
+      </div>
+
+      <div>
+        <label for="stars_box">
+          Stars
+        </label>
+
+        <input type="text" id="stars_box" name="query_stars">
+      </div>
+
+      <div>
+        <label for="review_count_box">
+          Review count
+        </label>
+
+        <input type="text" id="review_count_box" name="query_review_count">
+      </div>
+
+      <div>
+        <label for="reviews_count_box">
+          Reviews count
+        </label>
+
+        <input type="text" id="reviews_count_box" name="query_reviews_count">
+      </div>
+
+      <button>
+        Create landlord
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Neighborhood
+        </th>
+
+        <th>
+          Address
+        </th>
+
+        <th>
+          State
+        </th>
+
+        <th>
+          Postal code
+        </th>
+
+        <th>
+          Latitude
+        </th>
+
+        <th>
+          Longitude
+        </th>
+
+        <th>
+          Stars
+        </th>
+
+        <th>
+          Review count
+        </th>
+
+        <th>
+          Reviews count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_landlords.each do |a_landlord| %>
+      <tr>
+        <td>
+          <%= a_landlord.id %>
+        </td>
+
+        <td>
+          <%= a_landlord.name %>
+        </td>
+
+        <td>
+          <%= a_landlord.neighborhood %>
+        </td>
+
+        <td>
+          <%= a_landlord.address %>
+        </td>
+
+        <td>
+          <%= a_landlord.state %>
+        </td>
+
+        <td>
+          <%= a_landlord.postal_code %>
+        </td>
+
+        <td>
+          <%= a_landlord.latitude %>
+        </td>
+
+        <td>
+          <%= a_landlord.longitude %>
+        </td>
+
+        <td>
+          <%= a_landlord.stars %>
+        </td>
+
+        <td>
+          <%= a_landlord.review_count %>
+        </td>
+
+        <td>
+          <%= a_landlord.reviews_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_landlord.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_landlord.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/landlords/<%= a_landlord.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,177 @@
+<div>
+  <div>
+    <h1>
+      Review #<%= @the_review.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/reviews">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_review/<%= @the_review.id %>">
+          Delete review
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Stars
+      </dt>
+      <dd>
+        <%= @the_review.stars %>
+      </dd>
+
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @the_review.date %>
+      </dd>
+
+      <dt>
+        Text
+      </dt>
+      <dd>
+        <%= @the_review.text %>
+      </dd>
+
+      <dt>
+        Useful
+      </dt>
+      <dd>
+        <%= @the_review.useful %>
+      </dd>
+
+      <dt>
+        Cool
+      </dt>
+      <dd>
+        <%= @the_review.cool %>
+      </dd>
+
+      <dt>
+        Landlord
+      </dt>
+      <dd>
+        <%= @the_review.landlord_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_review.user_id %>
+      </dd>
+
+      <dt>
+        City
+      </dt>
+      <dd>
+        <%= @the_review.city %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_review.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_review.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit review
+    </h2>
+
+    <form action="/modify_review/<%= @the_review.id %>"  method="post" >
+      <div>
+        <label for="stars_box">
+          Stars
+        </label>
+
+        <input type="text" id="stars_box" name="query_stars" value="<%= @the_review.stars %>">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="datetime-local" id="date_box" name="query_date"
+         value="<%= @the_review.date %>">
+      </div>
+
+      <div>
+        <label for="text_box">
+          Text
+        </label>
+
+        <textarea id="text_box" name="query_text"><%= @the_review.text %></textarea>
+      </div>
+
+      <div>
+        <label for="useful_box">
+          Useful
+        </label>
+
+        <input type="text" id="useful_box" name="query_useful" value="<%= @the_review.useful %>">
+      </div>
+
+      <div>
+        <label for="cool_box">
+          Cool
+        </label>
+
+        <input type="text" id="cool_box" name="query_cool" value="<%= @the_review.cool %>">
+      </div>
+
+      <div>
+        <label for="landlord_id_box">
+          Landlord
+        </label>
+
+        <input type="text" id="landlord_id_box" name="query_landlord_id" value="<%= @the_review.landlord_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_review.user_id %>">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city" value="<%= @the_review.city %>">
+      </div>
+
+      <button>
+        Update review
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
