@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get("/", { :controller => "landlords", :action => "index" })
-  get("/profile", { :controller => "user_authentication", :action => "index" })
+  get("/reviews", { :controller => "reviews", :action => "index" })
 
   # Routes for the Category resource:
 

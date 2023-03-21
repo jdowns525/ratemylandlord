@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    matching_reviews = @current_user.reviews
+    matching_reviews = Review.all
 
     @list_of_reviews = matching_reviews.order({ :created_at => :desc })
 
