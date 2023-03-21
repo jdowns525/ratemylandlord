@@ -1,0 +1,37 @@
+<div>
+  <div>
+    <h1>
+      My Profile
+    </h1>
+  </div>
+</div>
+<tr>
+
+      <% @list_of_reviews.each do |a_review| %>
+
+      <tr>
+        <td>
+          <%= a_review.id %>
+        </td>
+        <td>
+          <%= a_review.user_id %>
+        </td>
+        <td>
+          <%= a_review.landlord.title %>
+        </td>
+
+  
+        <td>
+          <%= time_ago_in_words(a_review.created_at) %> ago
+        </td>
+
+        <td>
+          <a href="/delete_bookmark/<%= a_bookmark.id %>">
+            Un-bookmark
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+<hr>
