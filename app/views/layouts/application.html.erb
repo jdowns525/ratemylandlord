@@ -18,6 +18,7 @@
 <body>
   <nav>
     <ul>
+      <% if session.fetch(:user_id) == nil %>
       <li>
         <a href="/user_sign_in">Sign In</a>
       </li>
@@ -25,11 +26,26 @@
         <a href="/user_sign_up">Sign Up</a>
       </li>
       <li>
-        <a href="/profile">Profile</a>
+        <a href="/"> Home </a>
       </li>
+
       <li>
         <a href="/categories">Categories</a>
       </li>
+
+      <li>
+        <a href="/landlords">Landlords</a>
+      </li>
+
+      <% else %>
+      <li>
+        <a href="/"> Home </a>
+      </li>
+
+      <li>
+        <a href="/profile">Profile</a>
+      </li>
+      
       <li>
         <a href="/landlords">Landlords</a>
       </li>
@@ -39,6 +55,7 @@
       <li>
         <%= session.fetch(:user_id) %>
       </li>
+      <% end%>
     </ul>
   </nav>
   <%= yield %>
