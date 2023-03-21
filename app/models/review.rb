@@ -15,4 +15,6 @@
 #  user_id     :integer
 #
 class Review < ApplicationRecord
+  belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
+  belongs_to(:landlord, { :required => true, :class_name => "Landlord", :foreign_key => "landlord_id", :counter_cache => true })
 end

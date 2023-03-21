@@ -17,4 +17,6 @@
 #  updated_at    :datetime         not null
 #
 class Landlord < ApplicationRecord
+  has_many(:reviews, { :class_name => "Review", :foreign_key => "landlord_id", :dependent => :destroy })
+  has_many(:categories, { :class_name => "Category", :foreign_key => "landlord_id", :dependent => :destroy })
 end
