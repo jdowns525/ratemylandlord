@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      My Reviews
+      <%= @current_user.name %>'s Reviews
     </h1>
   </div>
 </div>
@@ -63,6 +63,14 @@
         <input type="text" id="city_box" name="query_city">
       </div>
 
+       <div>
+        <label for="user_id_box">
+          User ID
+        </label>
+
+        <input type="text" id="user_id" name="query_user_id">
+      </div>
+
       <button>
         Create review
       </button>
@@ -121,6 +129,11 @@
 
       <% @list_of_reviews.each do |a_review| %>
       <tr>
+
+        <td>
+          <%= a_review.user_id %>
+        </td>
+
         <td>
           <%= a_review.id %>
         </td>

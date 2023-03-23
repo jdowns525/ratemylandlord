@@ -23,9 +23,8 @@ class ReviewsController < ApplicationController
     the_review.date = params.fetch("query_date")
     the_review.text = params.fetch("query_text")
     the_review.useful = params.fetch("query_useful")
-    the_review.cool = params.fetch("query_cool")
     the_review.landlord_id = params.fetch("query_landlord_id")
-    the_review.user_id = params.fetch("query_user_id")
+    #the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
 
     if the_review.valid?
