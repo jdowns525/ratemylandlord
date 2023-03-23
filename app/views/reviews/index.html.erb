@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all reviews
+      My Reviews
     </h1>
   </div>
 </div>
@@ -11,7 +11,7 @@
 <div>
   <div>
     <h2>
-      Add a new review
+      Add New Review
     </h2>
 
     <form action="/insert_review" method="post">
@@ -128,10 +128,6 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
           Updated at
         </th>
 
@@ -177,9 +173,6 @@
           <%= a_review.city %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(a_review.created_at) %> ago
-        </td>
         <td>
           <%= time_ago_in_words(a_review.updated_at) %> ago
         </td>

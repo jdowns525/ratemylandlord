@@ -27,7 +27,8 @@ class LandlordsController < ApplicationController
     the_landlord.latitude = params.fetch("query_latitude")
     the_landlord.longitude = params.fetch("query_longitude")
     the_landlord.stars = params.fetch("query_stars")
-    the_landlord.caption = params.fetch("query_caption")
+    #the_landlord.caption = params.fetch("query_caption")
+    #the_landlord.id = session.fetch(:user_id)
 
     if the_landlord.valid?
       the_landlord.save

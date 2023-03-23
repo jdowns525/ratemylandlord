@@ -139,15 +139,10 @@
         </th>
 
         <th>
-          Reviews count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
           Updated at
+        </th>
+
+        <th>
         </th>
 
         <th>
@@ -197,19 +192,17 @@
         </td>
 
         <td>
-          <%= a_landlord.reviews_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_landlord.created_at) %> ago
-        </td>
-        <td>
           <%= time_ago_in_words(a_landlord.updated_at) %> ago
         </td>
 
         <td>
           <a href="/landlords/<%= a_landlord.id %>">
             Show details
+          </a>
+        </td>
+        <td>
+          <a href="/delete_landlord/<%= a_landlord.id %>">
+            Delete
           </a>
         </td>
       </tr>
