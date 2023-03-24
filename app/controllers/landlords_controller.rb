@@ -38,6 +38,8 @@ class LandlordsController < ApplicationController
     end
   end
 
+  
+
   def update
     the_id = params.fetch("path_id")
     the_landlord = Landlord.where({ :id => the_id }).at(0)
