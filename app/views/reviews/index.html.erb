@@ -139,6 +139,8 @@
 
         <th>
         </th>
+        <th>
+        </th>
       </tr>
 
       <% @list_of_reviews.each do |a_review| %>
@@ -191,6 +193,11 @@
         <td>
           <a href="/reviews/<%= a_review.id %>">
             Show details
+          </a>
+        </td>
+        <td>
+          <a href="/delete_review/<%= a_review.id %>">
+            Delete
           </a>
         </td>
       </tr>
