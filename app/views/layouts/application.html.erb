@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
     <title>Base Rails</title>
     <%= csrf_meta_tags %>
 
@@ -16,6 +17,7 @@
   </head>
 
 <body>
+
   <nav>
     <ul>
       <% if session.fetch(:user_id) == nil %>
