@@ -6,8 +6,13 @@
   </div>
 </div>
 <hr>
-<hr>
+
 <div>
+<% if @current_user == nil %>
+
+
+<%else %>
+
   <div>
     <h2>
       Add Landlord
@@ -91,7 +96,7 @@
     </form>
   </div>
 </div>
-
+<% end %>
 <hr>
 <div>
   <div>

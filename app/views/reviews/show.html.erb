@@ -87,7 +87,9 @@
 
 <hr>
 
+<% if @current_user == nil %>
 
+<% else %>
 <div>
   <div>
     <h2>
@@ -166,5 +168,5 @@
     </form>
   </div>
 </div>
-
+<% end %>
 <hr>
