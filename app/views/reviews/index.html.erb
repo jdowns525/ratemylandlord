@@ -197,11 +197,15 @@
             Show details
           </a>
         </td>
+        <%if @current_user == nil %>
+
+        <% else %>
         <td>
           <a href="/delete_review/<%= a_review.id %>">
             Delete
           </a>
         </td>
+        <% end %>
       </tr>
       <% end %>
     </table>
