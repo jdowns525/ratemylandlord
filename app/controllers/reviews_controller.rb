@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
     the_review = Review.new
     the_review.stars = params.fetch("query_stars")
     the_review.date = params.fetch("query_date")
+    the_review.date = params.fetch("input_date")
     the_review.text = params.fetch("query_text")
     the_review.useful = params.fetch("query_useful")
     the_review.landlord_id = params.fetch("query_landlord_id")
