@@ -1,23 +1,45 @@
-<h1>Sign in</h1>
+<div class="container min-vh-50 d-flex justify-content-center align-items-center" >
 
 <form action="/user_verify_credentials" method="post">
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Enter your email..." type="text">
+
+  <div class="mb-4">
+    <label for="email_box" class="form-label">Email</label>
+    
+    <input id="email_box" name="query_email" class="form-control border" placeholder="Enter your email..." type="text">
+    <div id="emailHelp" class="form-text">
   </div>
 
-  <div>
+  <div class="mb-4">
     <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Enter your password..." type="password">
+    
+    <input  class="form-control border" id="password_box" name="query_password" placeholder="Enter your password..." type="password">
   </div>
 
-  <button>
+  <div class="container min-vh-50 d-flex justify-content-center">
+  <button type="submit" class="btn btn-primary">
     Sign in
   </button>
+  </div>
 </form>
 
 <hr>
 
+<footer>
+  <div class="container min-vh-100 d-flex justify-content-center">
 <p>
   Or, <a href="/user_sign_up">Sign up</a> instead.
 </p>
+</div>
+</footer>
+
+<style>
+  .border {
+    border-style: solid;
+    border-color: gray;
+    width: 350px;
+  }
+  .mb-4 {
+    padding-top: 20px;
+    margin: 20px;
+  }
+</style>
