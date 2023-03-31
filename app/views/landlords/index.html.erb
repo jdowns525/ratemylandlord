@@ -183,14 +183,17 @@
         </th>
 
         <th>
+          Caption
+        </th>
+
+        <th>
           Updated at
         </th>
 
         <th>
         </th>
 
-        <th>
-        </th>
+        
       </tr>
 
       <% @list_of_landlords.each do |a_landlord| %>
@@ -228,8 +231,10 @@
         </td>
 
         <td>
-          <%= a_landlord.review_count %>
+          <%= a_landlord.caption %>
         </td>
+
+       
 
         <td>
           <%= time_ago_in_words(a_landlord.updated_at) %> ago
