@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
      <a class="navbar-brand" href="/">
-     <img src="image1.jpg"></a>
+     <img src="nice.jpg"> My Landlord Ratings</a>
      <button class="navbar-toggler"
      type="button" data-toggle="collapse" 
       data-target="#navbarSupportedContent" 
@@ -36,7 +36,7 @@
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ms-auto order-0 ">
       
       <li class="nav-item active">
         <a class="nav-link" href="/user_sign_in">Sign In</a>
@@ -57,6 +57,19 @@
       </li>
 
       <% else %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"> 
+        <img src="nice.jpg"> My Landlord Ratings </a>
+        <button class="navbar-toggler"
+          type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto order-0 ">
       <li class="nav-item">
         <a class="nav-link" href="/"> Home </a>
       </li>
@@ -70,15 +83,17 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" href="/edit_user_profile">Edit Profile</a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="/user_sign_out">Sign Out</a>
       </li>
 
 
-      <li class="nav-item" >
-        <%= session.fetch(:user_id) %>
-      </li>
       <% end%>
     </ul>
+
   </nav>
 
   <% if notice.present? %>
@@ -99,11 +114,19 @@
 
 <style>
   .navbar-brand {
-    padding: 10px;
+      height:auto;
+    width:auto;
+    float: left;
+    padding-left: 2%;
+    margin: 0 auto; 
+    padding: 10px 0;
   }
   .nav-item {
+
     padding: 0px;
     width: 150px;
     font-size: 20px;
   }
+  
+
 </style>
