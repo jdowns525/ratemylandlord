@@ -13,136 +13,110 @@
 
 <%else %>
 
-  <div>
-    <h2>
-      Add Landlord
-    </h2>
+  
+<h2> Add Landlord </h2>
 
-    <form action="/insert_landlord" method="post">
+<form action="/insert_landlord" method="post">
 
-    <div class="row mb-3">>
-      <div class="form-group col-md-4">
-        <label for="name_box">
-           Landlord Name
-        </label>
+<div class="row mb-3">>
+  <div class="form-group col-md-4">
+    <label for="name_box">Landlord Name</label>
+    <input type="text" class="form-control" id="name_box" name="query_name" placeholder="Enter Landlord...">
+  </div>
 
-        <input type="text" class="form-control" id="name_box" name="query_name" placeholder="Enter Landlord...">
-      </div>
+  <div class="form-group col-md-4">
+    <label for="address_box">Address</label>
+    <input type="text" class="form-control" id="address_box" name="query_address" placeholder="Enter Address...">
+  </div>
 
-      <div class="form-group col-md-6">
-        <label for="address_box">
-          Address
-        </label>
+  <div class="form-group col-md-2">
+    <label for="neighborhood_box">Neighborhood</label>
+    <input type="text" class="form-control" id="neighborhood_box" name="query_neighborhood" placeholder="Neighborhood">
+  </div>
 
-        <input type="text" class="form-control" id="address_box" name="query_address" placeholder="Enter Address...">
-      </div>
+</div>
 
-    </div>
+<div class="row mb-3">
 
-    <div class="row mb-3">
-       <div class="form-group col-md-4">
-        <label for="neighborhood_box">
-          Neighborhood
-        </label>
-
-        <input type="text" class="form-control" id="neighborhood_box" name="query_neighborhood" placeholder="Neighborhood">
-      </div>
-
-      <div class="form-group col-md-2">
-          <label for="city_box">
-          City
-          </label>
-
-        <input type="text" class="form-control" id="city_box" name="query_city" placeholder="Enter City...">
-      </div>
+  <div class="form-group col-md-2">
+    <label for="city_box">City</label>
+    <input type="text" class="form-control" id="city_box" name="query_city" placeholder="Enter City...">
+  </div>
     
-      <div class="form-group col-md-4" name="query_state">
-        <label for="inputState" name="query_state">State</label>
-          <select id="inputState" class="form-control" name="query_state">
-          <option selected>Choose...</option>
-          <option value="AL">Alabama</option>
-          <option value="AK">Alaska</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="DE">Delaware</option>
-          <option value="DC">District Of Columbia</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HI">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="IL">Illinois</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentucky</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MA">Massachusetts</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Missouri</option>
-          <option value="MT">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="OH">Ohio</option>
-          <option value="OK">Oklahoma</option>
-          <option value="OR">Oregon</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TN">Tennessee</option>
-          <option value="TX">Texas</option>
-          <option value="UT">Utah</option>
-          <option value="VT">Vermont</option>
-          <option value="VA">Virginia</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Virginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
-        </select>
-    </div>
+  <div class="form-group col-md-2" name="query_state">
+    <label for="inputState" name="query_state">State</label>
+      <select id="inputState" class="form-control" name="query_state">
+      <option selected>Choose...</option>
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District Of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </select>
   </div>
 
-      <div class="form-group col-md-2">
-          <label for="postal_code_box">
-          Zip code
-          </label>
-
-        <input type="text" class="form-control" id="postal_code_box" name="query_postal_code" placeholder="Enter Zip Code...">
-      </div>
-
-      <div class="form-group col-md-2">
-        <label for="stars_box">
-          Rating Stars
-        </label>
-
-        <input type="text" class="form-control" id="stars_box" name="query_stars" placeholder="Enter Stars...">
-      </div>
-
-      <div class="form-group col-md-6"> 
-        <label for="browser_caption">Caption</label>
-
-        <textarea id="browser_caption" class="form-control" name="query_caption" placeholder="Enter a caption for the Rating..."></textarea>
-      </div>
-
-
-      <button type="submit" class="btn btn-primary">
-        Create landlord
-      </button>
-    </form>
+  <div class="form-group col-md-2">
+    <label for="postal_code_box">Zip code</label>
+    <input type="text" class="form-control" id="postal_code_box" name="query_postal_code" placeholder="Enter Zip Code...">
   </div>
+
+  <div class="form-group col-md-2">
+    <label for="stars_box">Rating Stars</label>
+    <input type="text" class="form-control" id="stars_box" name="query_stars" placeholder="Enter Stars...">
+  </div>
+</div>
+  <div class="form-group col-md-9"> 
+    <label for="browser_caption">Caption</label>
+    <textarea id="browser_caption" class="form-control" name="query_caption" placeholder="Enter a caption for the Rating..."></textarea>
+  </div>
+<button type="submit" class="btn btn-primary">Create landlord</button>
+</form>
 </div>
 <% end %>
 <hr>
