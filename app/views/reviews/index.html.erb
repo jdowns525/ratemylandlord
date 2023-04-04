@@ -10,179 +10,93 @@
 <% if @current_user == nil %>
 
 <% else %>
-<h2> Add New Review </h2>
+<h2>Add New Review</h2>
 <form action="/insert_review" method="post">
   <div class="row mb-3">
     <div class="col-md-6">
-     <label for="vacancy_box">Date of Vacancy</label>
+      <label for="vacancy_box">Date of Vacancy</label>
       <input type="date" class="form-control" id="vacancy_box" name="query_vacancy">
     </div>
-
     <div class="col-md-6">
       <label for="date_box">Date of Occupancy</label>
-<input type="date" class="form-control" id="date_box" name="query_date">
-
+      <input type="date" class="form-control" id="date_box" name="query_date">
     </div>
   </div>
   <div class="mb-3">
     <label for="text_box">Text</label>
-    <textarea textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+    <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
   </div>
   <div class="row mb-3">
     <div class="col-md-4">
-     <label for="city_box">City</label>
-    <input type="text" class="form-control" id="city_box" name="query_city">
-  </div>
+      <label for="city_box">City</label>
+      <input type="text" class="form-control" id="city_box" name="query_city">
+    </div>
     <div class="col-md-2">
       <label for="user_id_box">User ID</label>
       <input type="text" class="form-control" id="user_id_box" name="query_user_id">
-      </select>
     </div>
     <div class="col-md-2">
       <label for="landlord_id_box">Landlord ID</label>
-    <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
+      <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
     </div>
-  
     <div class="col-md-2">
       <label for="stars_box">Stars</label>
       <input type="text" class="form-control" id="stars_box" name="query_stars">
     </div>
-
     <div class="col-md-2">
       <label for="useful_box">Useful?</label>
       <input type="text" class="form-control" id="useful_box" name="query_useful">
     </div>
   </div>
-</div>
-  
-<button type="submit" class="btn btn-primary">Create review</button>
 
+  <button type="submit" class="btn btn-primary">Create review</button>
 </form>
 <% end %>
 <hr>
 <div>
   <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Landlord ID
-        </th>
-
-        <th>
-          Stars
-        </th>
-
-        <th>
-          Date of Occupancy
-        </th>
-
-        <th>
-          Date of Vacancy
-        </th>
-
-        <th>
-        Caption
-        </th>
-
-        <th>
-          Useful
-        </th>
-
-        <th>
-          Landlord
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          City
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_reviews.each do |a_review| %>
-      <tr>
-
-        <td>
-          <%= a_review.user_id %>
-        </td>
-
-        <td>
-          <%= a_review.id %>
-        </td>
-
-        <td>
-          <%= a_review.stars %>
-        </td>
-
-        <td>
-          <%= a_review.date %>
-        </td>
-
-        <td>
-          <%= a_review.date %>
-        </td>
-
-        <td>
-          <%= a_review.text %>
-        </td>
-
-        <td>
-          <%= a_review.useful %>
-        </td>
-
-        <td>
-          <%= a_review.cool %>
-        </td>
-
-        <td>
-          <%= a_review.landlord_id %>
-        </td>
-
-        <td>
-          <%= a_review.user_id %>
-        </td>
-
-        <td>
-          <%= a_review.city %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_review.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/reviews/<%= a_review.id %>">
-            Show details
-          </a>
-        </td>
-        <%if @current_user == nil %>
-
-        <% else %>
-        <td>
-          <a href="/delete_review/<%= a_review.id %>">
-            Delete
-          </a>
-        </td>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Landlord ID</th>
+          <th>Stars</th>
+          <th>Date of Occupancy</th>
+          <th>Date of Vacancy</th>
+          <th>Caption</th>
+          <th>Useful</th>
+          <th>Landlord</th>
+          <th>User</th>
+          <th>City</th>
+          <th>Updated at</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @list_of_reviews.each do |a_review| %>
+        <tr>
+          <td><%= a_review.user_id %></td>
+          <td><%= a_review.id %></td>
+          <td><%= a_review.stars %></td>
+          <td><%= a_review.date %></td>
+          <td><%= a_review.date %></td>
+          <td><%= a_review.text %></td>
+          <td><%= a_review.useful %></td>
+          <td><%= a_review.cool %></td>
+          <td><%= a_review.landlord_id %></td>
+          <td><%= a_review.user_id %></td>
+          <td><%= a_review.city %></td>
+          <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
+          <td><a href="/reviews/<%= a_review.id %>">Show details</a></td>
+          <% if @current_user %>
+          <td><a href="/delete_review/<%= a_review.id %>">Delete</a></td>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
+      </tbody>
     </table>
   </div>
-</div>
+</div> 
 
 <hr>
