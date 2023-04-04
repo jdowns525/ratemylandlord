@@ -1,45 +1,43 @@
-<div class="container align-items-center">
-  <form action="/insert_user" method="post">
+<div class="container ">
+  <form action="/insert_user" method="post ">
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6 ">
       <label for="email_box" class="form-label">Email</label>
       <input id="email_box" name="query_email" placeholder="Choose a email..." type="text" class="form-control" aria-describedby="emailHelp">
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6">
       <label for="user_id_box" class="form-label">Username</label>
-      <input type="text" id="user_id_box" name="query_user_id" class="form-control">
+      <input type="text" id="user_id_box" name="query_user_id" placeholder="Enter Username..." class="form-control">
       <div id="emailHelp" class="form-text"></div>
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6">
       <label for="name_box" class="form-label">Name</label>
       <input type="text" id="name_box" name="query_name" placeholder="Enter Name..." class="form-control">
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6">
       <label for="password_box" class="form-label">Password</label>
       <input id="password_box" name="query_password" placeholder="Choose a password..." type="password" class="form-control">
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6">
       <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
       <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password" class="form-control">
     </div>
 
-    <div class="mb-2">
+    <div class="mb-2 col-md-6">
       <button type="submit" class="btn btn-primary">Sign up</button>
     </div>
 
   </form>
 
   <footer>
-    <div class="mt-2">
+    <div class="mt-2 col-md-6">
       <p>
         Or, <a href="/user_sign_in">Sign in</a> instead.
       </p>
     </div>
   </footer>
 </div>
-
-
