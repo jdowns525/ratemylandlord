@@ -1,72 +1,45 @@
-<div class="container-fluid min-vh-50 d-flex justify-content-center align-items-center">
+<div class="container align-items-center">
+  <form action="/insert_user" method="post">
 
-<form action="/insert_user" method="post">
+    <div class="mb-2">
+      <label for="email_box" class="form-label">Email</label>
+      <input id="email_box" name="query_email" placeholder="Choose a email..." type="text" class="form-control" aria-describedby="emailHelp">
+    </div>
 
-  <div class="mb-4">
+    <div class="mb-2">
+      <label for="user_id_box" class="form-label">Username</label>
+      <input type="text" id="user_id_box" name="query_user_id" class="form-control">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
 
-    <label for="email_box" class="form-label">Email</label>
+    <div class="mb-2">
+      <label for="name_box" class="form-label">Name</label>
+      <input type="text" id="name_box" name="query_name" placeholder="Enter Name..." class="form-control">
+    </div>
 
-    <input class="form-control border" id="email_box" name="query_email" placeholder="Choose a email..." type="text" aria-describebdy="emailHelp">
-  </div>
-                 
-  <div class="mb-4">
-    <label for="user_id_box" >User</label>
-      
-    <input type="text" id="user_id_box" name="query_user_id" class="form-control border">
-    <div id="emailHelp" class="form-text"></div>
-  </div>
-         
-  <div class="mb-4">
-    <label for="name_box">Name</label>
-      
-    <input type="text" id="name_box" class="form-control border" name="query_name" id="name_box" placeholder="Enter Name...">
-  </div>
-    
-  <div class="mb-4">
-    <label for="password_box" class="form-label">Password</label>
+    <div class="mb-2">
+      <label for="password_box" class="form-label">Password</label>
+      <input id="password_box" name="query_password" placeholder="Choose a password..." type="password" class="form-control">
+    </div>
 
-    <input id="password_box" class="form-control border" name="query_password" placeholder="Choose a password..." type="password">
-  </div>
+    <div class="mb-2">
+      <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
+      <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password" class="form-control">
+    </div>
 
-  <div>
-    <label for="password_confirmation_box" class="form-label" >Password Confirmation</label>
+    <div class="mb-2">
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
 
-    <input id="password_confirmation_box" class="form-control border-green"
-          name="query_password_confirmation"
-          placeholder="Confirm your password..."
-          type="password">
-  </div>
+  </form>
 
-  <div class="container min-vh-50 d-flex justify-content-center">>
-  <button type="submit" class="btn btn-primary">
-    Sign up
-  </button>
-  </div>
-</form>
+  <footer>
+    <div class="mt-2">
+      <p>
+        Or, <a href="/user_sign_in">Sign in</a> instead.
+      </p>
+    </div>
+  </footer>
+</div>
 
-<hr>
 
-<footer>
-  <div class="container d-flex justify-content-center">
-    <p>
-      Or, <a href="/user_sign_in">Sign in</a> instead.
-    </p>
-  </div>
-</footer>
-
-<style>
-  .border {
-    border-style: solid;
-    border-color: #75C156;
-    width: 350px;
-  }
-  .mb-4 {
-    padding-top: 20px;
-    margin: 20px;
-  }
-  .form-select {
-    border-style: solid;
-    border-color: #75C156;
-    width: 350px;
-  }
-</style>
