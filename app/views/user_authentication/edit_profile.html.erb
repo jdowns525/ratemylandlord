@@ -1,31 +1,33 @@
-<div >
-  <h5>
-    Edit User Account
+<div class="container">
+  <h5 class="mb-3">
+    Edit <%= @current_user.name %>'s Profile
   </h5>
 
-  <div>
+  <hr>
+
+  <div class="row">
     <form action="/modify_user" method="post">
-      <div>
-        <label for="email_box">Email</label>
-        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+      <div class="mb-3">
+        <label for="email_box" class="form-label">Email</label>
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>" class="form-control">
       </div>
   
-      <div>
-        <label for="name_box">Name</label>
-        <input id="name_box" name="query_name" value="<%= @current_user.name %>">
+      <div class="mb-3">
+        <label for="name_box" class="form-label">Name</label>
+        <input id="name_box" name="query_name" value="<%= @current_user.name %>" class="form-control">
       </div>
 
-      <div>
-        <label for="password_box">Password</label>
-        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+      <div class="mb-3">
+        <label for="password_box" class="form-label">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password" class="form-control">
       </div>
     
-      <div>
-        <label for="password_confirmation_box">Password Confirmation</label>
-        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+      <div class="mb-3">
+        <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password" class="form-control">
       </div>
 
-      <button>
+      <button type="submit" class="btn btn-primary">
         Update account
       </button>
     </form>
