@@ -2,17 +2,18 @@
 #
 # Table name: reviews
 #
-#  id          :integer          not null, primary key
-#  city        :string
-#  cool        :integer
-#  date        :datetime
-#  stars       :integer
-#  text        :text
-#  useful      :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  landlord_id :integer
-#  user_id     :integer
+#  id             :integer          not null, primary key
+#  city           :string
+#  cool           :integer
+#  date_occupancy :date
+#  date_vacancy   :date
+#  stars          :integer
+#  text           :text
+#  useful         :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  landlord_id    :integer
+#  user_id        :integer
 #
 class Review < ApplicationRecord
   belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })

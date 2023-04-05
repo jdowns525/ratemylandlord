@@ -17,11 +17,11 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="vacancy_box">Date of Vacancy</label>
-       <input type="date" class="form-control" id="date_box" name="query_date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+       <input type="date" class="form-control" id="date_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
     </div>
     <div class="col-md-6">
       <label for="date_box">Date of Occupancy</label>
-       <input type="date" class="form-control" id="date_box" name="query_date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+       <input type="date" class="form-control" id="date_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
     </div>
   </div>
   <div class="mb-3">
@@ -85,8 +85,8 @@
   <tr>
     <td><%= a_review.id %></td>
     <td><%= a_review.landlord_id %></td>
-    <td><%= a_review.date %></td>
-    <td><%= a_review.date %></td>
+    <td><%= a_review.date_occupancy %></td>
+    <td><%= a_review.date_vacancy %></td>
     <td><%= a_review.text %></td>
     <td><%= a_review.useful %></td>
     <td><%= a_review.stars %></td>

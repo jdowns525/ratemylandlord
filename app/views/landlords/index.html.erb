@@ -19,7 +19,7 @@
 <form action="/insert_landlord" method="post">
 
 <div class="row mb-3">
-  <div class="form-group col-md-2">
+  <div class="form-group col-md-3">
     <label for="name_box">Landlord Name</label>
     <input type="text" class="form-control" id="name_box" name="query_name" placeholder="Enter Landlord...">
   </div>
@@ -43,7 +43,7 @@
     <input type="text" class="form-control" id="city_box" name="query_city" placeholder="Enter City...">
   </div>
     
-  <div class="form-group col-md-2" name="query_state">
+  <div class="form-group col-md-3" name="query_state">
     <label for="inputState" name="query_state">State</label>
       <select id="inputState" class="form-control" name="query_state">
       <option selected>Choose...</option>
@@ -115,6 +115,8 @@
     <label for="browser_caption">Caption</label>
     <textarea id="browser_caption" class="form-control" name="query_caption" placeholder="Enter a caption for the Rating..."></textarea>
   </div>
+
+
 <button type="submit" class="btn btn-primary">Create landlord</button>
 </form>
 </div>
@@ -178,11 +180,11 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="vacancy_box">Date of Vacancy</label>
-       <input type="date" class="form-control" id="date_box" name="query_date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+       <input type="date" class="form-control" id="date_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
     </div>
     <div class="col-md-6">
       <label for="date_box">Date of Occupancy</label>
-       <input type="date" class="form-control" id="date_box" name="query_date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+       <input type="date" class="form-control" id="date_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
     </div>
   </div>
   <div class="mb-3">
