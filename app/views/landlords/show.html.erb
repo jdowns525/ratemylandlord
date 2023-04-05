@@ -60,93 +60,92 @@
       Edit landlord
     </h2>
 
-      <form action="/modify_landlord/<%= @the_landlord.id %>" method="post" >
-    <div class="form-group">
-      <label for="name_box">
-        Name
-      </label>
+    <form action="/modify_landlord/<%= @the_landlord.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
 
-      <input type="text" class="form-control" id="name_box" name="query_name" value="<%= @the_landlord.name %>">
-    </div>
+        <input type="text" id="name_box" name="query_name" value="<%= @the_landlord.name %>">
+      </div>
 
-    <div class="form-group">
-      <label for="neighborhood_box">
-        Neighborhood
-      </label>
+      <div>
+        <label for="neighborhood_box">
+          Neighborhood
+        </label>
 
-      <input type="text" class="form-control" id="neighborhood_box" name="query_neighborhood" value="<%= @the_landlord.neighborhood %>">
-    </div>
+        <input type="text" id="neighborhood_box" name="query_neighborhood" value="<%= @the_landlord.neighborhood %>">
+      </div>
 
-    <div class="form-group">
-      <label for="address_box">
-        Address
-      </label>
+      <div>
+        <label for="address_box">
+          Address
+        </label>
 
-      <input type="text" class="form-control" id="address_box" name="query_address" value="<%= @the_landlord.address %>">
-    </div>
+        <input type="text" id="address_box" name="query_address" value="<%= @the_landlord.address %>">
+      </div>
 
-    <div class="form-group">
-      <label for="state_box">
-        State
-      </label>
+      <div>
+        <label for="state_box">
+          State
+        </label>
 
-      <input type="text" class="form-control" id="state_box" name="query_state" value="<%= @the_landlord.state %>">
-    </div>
+        <input type="text" id="state_box" name="query_state" value="<%= @the_landlord.state %>">
+      </div>
 
-    <div class="form-group">
-      <label for="postal_code_box">
-        Postal code
-      </label>
+      <div>
+        <label for="postal_code_box">
+          Postal code
+        </label>
 
-      <input type="text" class="form-control" id="postal_code_box" name="query_postal_code" value="<%= @the_landlord.postal_code %>">
-    </div>
+        <input type="text" id="postal_code_box" name="query_postal_code" value="<%= @the_landlord.postal_code %>">
+      </div>
 
-    <div class="form-group">
-      <label for="latitude_box">
-        Latitude
-      </label>
+      <div>
+        <label for="latitude_box">
+          Latitude
+        </label>
 
-      <input type="text" class="form-control" id="latitude_box" name="query_latitude" value="<%= @the_landlord.latitude %>">
-    </div>
+        <input type="text" id="latitude_box" name="query_latitude" value="<%= @the_landlord.latitude %>">
+      </div>
 
-    <div class="form-group">
-      <label for="longitude_box">
-        Longitude
-      </label>
+      <div>
+        <label for="longitude_box">
+          Longitude
+        </label>
 
-      <input type="text" class="form-control" id="longitude_box" name="query_longitude" value="<%= @the_landlord.longitude %>">
-    </div>
+        <input type="text" id="longitude_box" name="query_longitude" value="<%= @the_landlord.longitude %>">
+      </div>
 
-    <div class="form-group">
-      <label for="stars_box">
-        Stars
-      </label>
+      <div>
+        <label for="stars_box">
+          Stars
+        </label>
 
-      <input type="text" class="form-control" id="stars_box" name="query_stars" value="<%= @the_landlord.stars %>">
-    </div>
+        <input type="text" id="stars_box" name="query_stars" value="<%= @the_landlord.stars %>">
+      </div>
 
-    <div class="form-group">
-      <label for="review_count_box">
-        Review count
-      </label>
+      <div>
+        <label for="review_count_box">
+          Review count
+        </label>
 
-      <input type="text" class="form-control" id="review_count_box" name="query_review_count" value="<%= @the_landlord.review_count %>">
-    </div>
+        <input type="text" id="review_count_box" name="query_review_count" value="<%= @the_landlord.review_count %>">
+      </div>
 
-    <div class="form-group">
-      <label for="reviews_count_box">
-        Reviews count
-      </label>
+      <div>
+        <label for="reviews_count_box">
+          Reviews count
+        </label>
 
-      <input type="text" class="form-control" id="reviews_count_box" name="query_reviews_count" value="<%= @the_landlord.reviews_count %>">
-    </div>
+        <input type="text" id="reviews_count_box" name="query_reviews_count" value="<%= @the_landlord.reviews_count %>">
+      </div>
 
-    <button class="btn btn-primary">
-      Update landlord
-    </button>
-  </form>
-</div>
-
+      <button>
+        Update landlord
+      </button>
+    </form>
+  </div>
 </div>
 <% end %>
 
