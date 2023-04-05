@@ -1,21 +1,25 @@
 <div class="container">
+  <div class="card">
+    <div class="card-header">
   <div>
     <h1>
       Feed
     </h1>
   </div>
 </div>
+
 <hr>
-
-<div class="container">
 <% if @current_user == nil %>
-
 
 <%else %>
 
-  
-<h2> Add Landlord </h2>
-<div class="container">
+
+
+<h2 class="container"> Add Landlord </h2>
+
+  <div class="card">
+    <div class="card-header">
+
 <form action="/insert_landlord" method="post">
 
 <div class="row mb-3">
@@ -117,10 +121,10 @@
   </div>
 
 
-<button type="submit" class="btn btn-primary">Create landlord</button>
-</form>
-</div>
-<% end %>
+  <button type="submit" class="btn btn-primary">Create landlord</button>
+  </form>
+  </div>
+  <% end %>
 </div>
 
 
@@ -128,6 +132,10 @@
 
 
 <div class="container">
+  <div class="card">
+  <div class="card-header">
+</div>
+
   <div class="row">
   <div class="col-md-12">
     <table class="table table-striped">
@@ -167,16 +175,18 @@
       </tbody>
     </table>
   </div>
-</div>
-
+  </div>
 </div>
 
 
 <hr>
-<hr>
+
 <h2 class="container">Add New Review</h2>
-<div class="container">
+  <div class="card">
+    <div class="card-header">
+
 <form action="/insert_review" method="post">
+
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="vacancy_box">Date of Vacancy</label>
@@ -187,10 +197,12 @@
        <input type="date" class="form-control" id="date_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
     </div>
   </div>
+
   <div class="mb-3">
     <label for="text_box">Text</label>
     <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
   </div>
+
   <div class="row mb-3">
     <div class="col-md-4">
       <label for="city_box">City</label>
@@ -208,7 +220,8 @@
       <label for="stars_box">Stars</label>
       <input type="text" class="form-control" id="stars_box" name="query_stars">
     </div>
-    <div class="col-md-2">
+
+  <div class="col-md-2">
   <label for="useful_box">Useful?</label>
   <select class="form-control" id="useful_box" name="query_useful">
     <option value="Yes">Yes</option>

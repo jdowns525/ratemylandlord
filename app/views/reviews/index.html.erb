@@ -1,5 +1,6 @@
-
 <div class="container ">
+  <div class="card">
+    <div class="card-header">
   <div>
     <h1>
       My Reviews
@@ -11,9 +12,17 @@
 <% if @current_user == nil %>
 
 <% else %>
+
+
+
 <h2 class="container">Add New Review</h2>
-<div class="container">
+<div class="card">
+  <div class="card-header">
+
+
+
 <form action="/insert_review" method="post">
+
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="vacancy_box">Date of Vacancy</label>
@@ -62,6 +71,9 @@
 <hr>
 
 <div class="container">
+  <div class="card">
+  <div class="card-header">
+</div>
   <div>
     <table class="table table-striped">
       <thead>

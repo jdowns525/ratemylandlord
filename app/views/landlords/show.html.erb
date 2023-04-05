@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="card">
+    <div class="card-header">
+    <div class="row">
     <div class="col-md-8 offset-md-2">
       <h1>Landlord #<%= @the_landlord.id %> details</h1>
 
@@ -43,6 +45,8 @@
         <dd><%= time_ago_in_words(@the_landlord.updated_at) %> ago</dd>
       </dl>
     </div>
+    </div>
+    </div>
   </div>
 </div>
 
@@ -54,99 +58,65 @@
 <% if @current_user == nil %>
 
 <% else %>
-<div>
-  <div>
-    <h2>
-      Edit landlord
-    </h2>
-
-    <form action="/modify_landlord/<%= @the_landlord.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_landlord.name %>">
-      </div>
-
-      <div>
-        <label for="neighborhood_box">
-          Neighborhood
-        </label>
-
-        <input type="text" id="neighborhood_box" name="query_neighborhood" value="<%= @the_landlord.neighborhood %>">
-      </div>
-
-      <div>
-        <label for="address_box">
-          Address
-        </label>
-
-        <input type="text" id="address_box" name="query_address" value="<%= @the_landlord.address %>">
-      </div>
-
-      <div>
-        <label for="state_box">
-          State
-        </label>
-
-        <input type="text" id="state_box" name="query_state" value="<%= @the_landlord.state %>">
-      </div>
-
-      <div>
-        <label for="postal_code_box">
-          Postal code
-        </label>
-
-        <input type="text" id="postal_code_box" name="query_postal_code" value="<%= @the_landlord.postal_code %>">
-      </div>
-
-      <div>
-        <label for="latitude_box">
-          Latitude
-        </label>
-
-        <input type="text" id="latitude_box" name="query_latitude" value="<%= @the_landlord.latitude %>">
-      </div>
-
-      <div>
-        <label for="longitude_box">
-          Longitude
-        </label>
-
-        <input type="text" id="longitude_box" name="query_longitude" value="<%= @the_landlord.longitude %>">
-      </div>
-
-      <div>
-        <label for="stars_box">
-          Stars
-        </label>
-
-        <input type="text" id="stars_box" name="query_stars" value="<%= @the_landlord.stars %>">
-      </div>
-
-      <div>
-        <label for="review_count_box">
-          Review count
-        </label>
-
-        <input type="text" id="review_count_box" name="query_review_count" value="<%= @the_landlord.review_count %>">
-      </div>
-
-      <div>
-        <label for="reviews_count_box">
-          Reviews count
-        </label>
-
-        <input type="text" id="reviews_count_box" name="query_reviews_count" value="<%= @the_landlord.reviews_count %>">
-      </div>
-
-      <button>
-        Update landlord
-      </button>
-    </form>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Edit landlord</h2>
+    </div>
+    <div class="card-body">
+      <form action="/modify_landlord/<%= @the_landlord.id %>" method="post">
+        <div class="mb-3">
+          <label for="name_box" class="form-label">Name</label>
+          <input type="text" id="name_box" name="query_name" class="form-control" value="<%= @the_landlord.name %>">
+        </div>
+        <div class="mb-3">
+          <label for="neighborhood_box" class="form-label">Neighborhood</label>
+          <input type="text" id="neighborhood_box" name="query_neighborhood" class="form-control" value="<%= @the_landlord.neighborhood %>">
+        </div>
+        <div class="mb-3">
+          <label for="address_box" class="form-label">Address</label>
+          <input type="text" id="address_box" name="query_address" class="form-control" value="<%= @the_landlord.address %>">
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="state_box" class="form-label">State</label>
+            <input type="text" id="state_box" name="query_state" class="form-control" value="<%= @the_landlord.state %>">
+          </div>
+          <div class="col">
+            <label for="postal_code_box" class="form-label">Postal code</label>
+            <input type="text" id="postal_code_box" name="query_postal_code" class="form-control" value="<%= @the_landlord.postal_code %>">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="latitude_box" class="form-label">Latitude</label>
+            <input type="text" id="latitude_box" name="query_latitude" class="form-control" value="<%= @the_landlord.latitude %>">
+          </div>
+          <div class="col">
+            <label for="longitude_box" class="form-label">Longitude</label>
+            <input type="text" id="longitude_box" name="query_longitude" class="form-control" value="<%= @the_landlord.longitude %>">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="stars_box" class="form-label">Stars</label>
+          <input type="text" id="stars_box" name="query_stars" class="form-control" value="<%= @the_landlord.stars %>">
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="review_count_box" class="form-label">Review count</label>
+            <input type="text" id="review_count_box" name="query_review_count" class="form-control" value="<%= @the_landlord.review_count %>">
+          </div>
+          <div class="col">
+            <label for="reviews_count_box" class="form-label">Reviews count</label>
+            <input type="text" id="reviews_count_box" name="query_reviews_count" class="form-control" value="<%= @the_landlord.reviews_count %>">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update landlord</
+      </form>
+    </div>
   </div>
 </div>
+
 <% end %>
 
 <hr>
