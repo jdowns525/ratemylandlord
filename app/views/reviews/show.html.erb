@@ -27,10 +27,17 @@
       </dd>
 
       <dt>
-        Date
+        Date of Vacancy
       </dt>
       <dd>
-        <%= @the_review.date %>
+        <%= @the_review.date_vacancy %>
+      </dd>
+
+      <dt>
+        Date of Occupancy
+      </dt>
+      <dd>
+        <%= @the_review.date_occupancy %>
       </dd>
 
       <dt>
@@ -107,11 +114,20 @@
 
       <div>
         <label for="date_box">
-          Date
+          Date of Vacancy
         </label>
 
-        <input type="datetime-local" id="date_box" name="query_date"
-         value="<%= @the_review.date %>">
+        <input type="datetime-local" id="date_box" name="query_date_vacancy"
+         value="<%= @the_review.date_vacancy %>">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date of Occupancy
+        </label>
+
+        <input type="datetime-local" id="date_box" name="query_date_occupancy"
+         value="<%= @the_review.date_occupancy %>">
       </div>
 
       <div>
