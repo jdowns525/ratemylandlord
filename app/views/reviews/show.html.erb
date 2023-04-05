@@ -1,62 +1,69 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Review #<%= @the_review.id %> details</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="d-flex justify-content-between align-items-center">
-        <a href="/reviews" class="btn btn-secondary">Go back</a>
-        <a href="/delete_review/<%= @the_review.id %>" class="btn btn-danger">Delete review</a>
+  <div class="card">
+  <div class="card-body"
+    <div class="card-header">
+      <h1 class="card-title">Review #<%= @the_review.id %> details</h1>
+    
+    <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="/reviews" class="btn btn-secondary">Go back</a>
+            <a href="/delete_review/<%= @the_review.id %>" class="btn btn-danger">Delete review</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col-md-8 offset-md-2">
-      <dl class="row">
-        <dt class="col-sm-3 font-weight-bold">Stars</dt>
-        <dd class="col-sm-9"><%= @the_review.stars %></dd>
-        <dt class="col-sm-3 font-weight-bold">Date of Vacancy</dt>
-        <dd class="col-sm-9"><%= @the_review.date_vacancy %></dd>
-        <dt class="col-sm-3 font-weight-bold">Date of Occupancy</dt>
-        <dd class="col-sm-9"><%= @the_review.date_occupancy %></dd>
-        <dt class="col-sm-3 font-weight-bold">Text</dt>
-        <dd class="col-sm-9"><%= @the_review.text %></dd>
-        <dt class="col-sm-3 font-weight-bold">Useful</dt>
-        <dd class="col-sm-9"><%= @the_review.useful %></dd>
-        <dt class="col-sm-3 font-weight-bold">Cool</dt>
-        <dd class="col-sm-9"><%= @the_review.cool %></dd>
-        <dt class="col-sm-3 font-weight-bold">Landlord</dt>
-        <dd class="col-sm-9"><%= @the_review.landlord_id %></dd>
-        <dt class="col-sm-3 font-weight-bold">User</dt>
-        <dd class="col-sm-9"><%= @the_review.user_id %></dd>
-        <dt class="col-sm-3 font-weight-bold">City</dt>
-        <dd class="col-sm-9"><%= @the_review.city %></dd>
-        <dt class="col-sm-3 font-weight-bold">Updated at</dt>
-        <dd class="col-sm-9"><%= time_ago_in_words(@the_review.updated_at) %> ago</dd>
-      </dl>
+      <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+          <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">Stars</dt>
+            <dd class="col-sm-9"><%= @the_review.stars %></dd>
+            <dt class="col-sm-3 font-weight-bold">Date of Vacancy</dt>
+            <dd class="col-sm-9"><%= @the_review.date_vacancy %></dd>
+            <dt class="col-sm-3 font-weight-bold">Date of Occupancy</dt>
+            <dd class="col-sm-9"><%= @the_review.date_occupancy %></dd>
+            <dt class="col-sm-3 font-weight-bold">Text</dt>
+            <dd class="col-sm-9"><%= @the_review.text %></dd>
+            <dt class="col-sm-3 font-weight-bold">Useful</dt>
+            <dd class="col-sm-9"><%= @the_review.useful %></dd>
+            <dt class="col-sm-3 font-weight-bold">Cool</dt>
+            <dd class="col-sm-9"><%= @the_review.cool %></dd>
+            <dt class="col-sm-3 font-weight-bold">Landlord</dt>
+            <dd class="col-sm-9"><%= @the_review.landlord_id %></dd>
+            <dt class="col-sm-3 font-weight-bold">User</dt>
+            <dd class="col-sm-9"><%= @the_review.user_id %></dd>
+            <dt class="col-sm-3 font-weight-bold">City</dt>
+            <dd class="col-sm-9"><%= @the_review.city %></dd>
+            <dt class="col-sm-3 font-weight-bold">Updated at</dt>
+            <dd class="col-sm-9"><%= time_ago_in_words(@the_review.updated_at) %> ago</dd>
+          </dl>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-</div>
 
 <hr>
 
 <% if @current_user == nil %>
 
 <% else %>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-6 offset-lg-3">
-      <h2 class="text-center mb-4">Edit review</h2>
-
-      <form action="/modify_review/<%= @the_review.id %>" method="post">
-        <div class="mb-3">
-          <label for="stars_box" class="form-label">Stars</label>
-          <input type="text" id="stars_box" name="query_stars" value="<%= @the_review.stars %>" class="form-control">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center mb-4">Edit review</h2>
         </div>
+        <div class="card-body">
+          <form action="/modify_review/<%= @the_review.id %>" method="post">
+            <div class="mb-3">
+              <label for="stars_box" class="form-label">Stars</label>
+              <input type="text" id="stars_box" name="query_stars" value="<%= @the_review.stars %>" class="form-control">
+            </div>
 
         <div class="mb-3">
           <label for="date_box" class="form-label">Date of Vacancy</label>
@@ -104,6 +111,8 @@
       </form>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 <% end %>
