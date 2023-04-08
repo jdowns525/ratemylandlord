@@ -10,7 +10,7 @@
         <div class="col-md-8 offset-md-2">
           <div class="d-flex justify-content-between align-items-center">
             <a href="/reviews" class="btn btn-secondary">Go back</a>
-            <a href="/delete_review/<%= @the_review.id %>" class="btn btn-danger">Delete review</a>
+            <a href="/delete_review/<%= @the_review.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete review</a>
           </div>
         </div>
       </div>
@@ -110,6 +110,6 @@
 </div>
 </div>
 </div>
-<%= javascript_include_tag 'style.js' %>
+
 <% end %>
 <hr>

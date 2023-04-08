@@ -167,7 +167,7 @@
               <td><%= a_landlord.caption %></td>
               <td><%= time_ago_in_words(a_landlord.updated_at) %> ago</td>
               <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
-              <td><a href="/delete_landlord/<%= a_landlord.id %>" class="btn btn-danger">Delete</a></td>
+              <td><a href="/delete_landlord/<%= a_landlord.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
             </tr>
             <% end %>
           </tbody>

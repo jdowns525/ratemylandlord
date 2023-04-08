@@ -8,7 +8,7 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-items-center">
         <a href="/landlords" class="btn btn-secondary">Go back</a>
-        <a href="/delete_landlord/<%= @the_landlord.id %>" class="btn btn-danger">Delete landlord</a>
+        <a href="/delete_landlord/<%= @the_landlord.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete landlord</a>
       </div>
 
       <dl class="mt-4">
