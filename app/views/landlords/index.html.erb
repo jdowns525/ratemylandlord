@@ -189,57 +189,58 @@
     </div>
     <div class="card-body">
       <form action="/insert_review" method="post">
-          <div class="form-group row">
-      <label for="date_vacancy_box" class="col-md-2 col-form-label">Date of Vacancy</label>
-      <div class="col-md-4">
-        <input type="date" class="form-control" id="date_vacancy_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
-      </div>
-      <label for="date_occupancy_box" class="col-md-2 col-form-label">Date of Occupancy</label>
-      <div class="col-md-4">
-        <input type="date" class="form-control" id="date_occupancy_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
-      </div>
-    </div>
+        <div class="form-group row">
+          <label for="date_vacancy_box" class="col-md-2 col-form-label">Date of Vacancy</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_vacancy_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+          <label for="date_occupancy_box" class="col-md-2 col-form-label">Date of Occupancy</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_occupancy_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="text_box">Text</label>
-      <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
-    </div>
+        <div class="form-group">
+          <label for="text_box">Text</label>
+          <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+        </div>
 
-    <div class="form-group row">
-      <label for="city_box" class="col-md-2 col-form-label">City</label>
-      <div class="col-md-4">
-        <input type="text" class="form-control" id="city_box" name="query_city">
-      </div>
-      <label for="user_id_box" class="col-md-2 col-form-label">User ID</label>
-      <div class="col-md-2">
-        <input type="text" class="form-control" id="user_id_box" name="query_user_id">
-      </div>
-      <label for="landlord_id_box" class="col-md-2 col-form-label">Landlord ID</label>
-      <div class="col-md-2">
-        <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
-      </div>
-    </div>
+        <div class="form-group row">
+          <label for="city_box" class="col-md-2 col-form-label">City</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="city_box" name="query_city">
+          </div>
+          <label for="user_id_box" class="col-md-2 col-form-label">User ID</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="user_id_box" name="query_user_id">
+          </div>
+          <label for="landlord_id_box" class="col-md-2 col-form-label">Landlord ID</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
+          </div>
+        </div>
 
-    <div class="form-group row">
-      <label for="stars_box" class="col-md-2 col-form-label">Stars</label>
-      <div class="col-md-2">
-        <input type="text" class="form-control" id="stars_box" name="query_stars">
-      </div>
-      <label for="useful_box" class="col-md-2 col-form-label">Useful?</label>
-      <div class="col-md-2">
-        <select class="form-control" id="useful_box" name="query_useful">
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-    </div>
+        <div class="form-group row">
+          <label for="stars_box" class="col-md-2 col-form-label">Stars</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="stars_box" name="query_stars">
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Useful?</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_useful">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create Review</button>
-    </div>
-
-  </form>
-  </div> <!-- Close card-body -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create Review</button>
+        </div>
+      </form>
+    </div> <!-- Close card-body -->
   </div> <!-- Close card -->
+</div> <!-- Close container -->
+
   <hr>
 </div>
