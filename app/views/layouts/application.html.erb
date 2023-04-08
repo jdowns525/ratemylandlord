@@ -23,8 +23,8 @@
 
   <% if session.fetch(:user_id) == nil %>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
      <a class="navbar-brand" href="/">
      <img src="nice.jpg"> My Landlord Ratings</a>
        <button class="navbar-toggler"
@@ -146,3 +146,6 @@
    padding: 20px 0;
 }
 </style>
+
+
+<%= javascript_include_tag 'style' %>
