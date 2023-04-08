@@ -104,7 +104,8 @@
             <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
             <td><a class="btn btn-primary" href="/reviews/<%= a_review.id %>">Show details</a></td>
             <% if @current_user %>
-            <td><a class="btn btn-danger" href="/delete_review/<%= a_review.id %>">Delete</a></td>
+            <td><a class="btn btn-danger" href="/delete_review/<%= a_review.id %>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+
             <% end %>
           </tr>
           <% end %>
@@ -114,3 +115,9 @@
   </div>
 </div>
 <hr>
+
+<script>
+  
+
+  
+</script>
