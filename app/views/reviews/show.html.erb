@@ -27,8 +27,7 @@
             <dd class="col-sm-9"><%= @the_review.text %></dd>
             <dt class="col-sm-3 font-weight-bold">Useful</dt>
             <dd class="col-sm-9"><%= @the_review.useful %></dd>
-            <dt class="col-sm-3 font-weight-bold">Cool</dt>
-            <dd class="col-sm-9"><%= @the_review.cool %></dd>
+           
             <dt class="col-sm-3 font-weight-bold">Landlord</dt>
             <dd class="col-sm-9"><%= @the_review.landlord_id %></dd>
             <dt class="col-sm-3 font-weight-bold">User</dt>
@@ -85,10 +84,7 @@
           <input type="text" id="useful_box" name="query_useful" value="<%= @the_review.useful %>" class="form-control">
         </div>
 
-        <div class="mb-3">
-          <label for="cool_box" class="form-label">Cool</label>
-          <input type="text" id="cool_box" name="query_cool" value="<%= @the_review.cool %>" class="form-control">
-        </div>
+       
 
         <div class="mb-3">
           <label for="landlord_id_box" class="form-label">Landlord</label>
