@@ -1,12 +1,10 @@
-<div class="container ">
+<div class="container">
   <div class="card">
     <div class="card-header">
-  <div>
-    <h1>
-      My Reviews
-    </h1>
-  </div>
-</div>
+      <div>
+        <h1>My Reviews</h1>
+      </div>
+    </div>
 
 <hr>
 <% if @current_user == nil %>
@@ -72,48 +70,47 @@
 
 <div class="container">
   <div class="card">
-  <div class="card-header">
-</div>
-  <div>
-    <table class="table table-striped">
-      <thead>
-  <tr>
-    <th>ID</th>
-    <th>Landlord</th>
-    <th>Date of Vacancy</th>
-    <th>Date of Occupancy</th>
-    <th>Caption</th>
-    <th>Useful</th>
-    <th>Stars</th>
-    <th>User</th>
-    <th>City</th>
-    <th>Updated at</th>
-    <th></th>
-    <th></th>
-  </tr>
-</thead>
-      <tbody>
-  <% @list_of_reviews.each do |a_review| %>
-  <tr>
-    <td><%= a_review.id %></td>
-    <td><%= a_review.landlord_id %></td>
-    <td><%= a_review.date_occupancy %></td>
-    <td><%= a_review.date_vacancy %></td>
-    <td><%= a_review.text %></td>
-    <td><%= a_review.useful %></td>
-    <td><%= a_review.stars %></td>
-    <td><%= a_review.user_id %></td>
-    <td><%= a_review.city %></td>
-    <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
-    <td><a href="/reviews/<%= a_review.id %>">Show details</a></td>
-    <% if @current_user %>
-    <td><a href="/delete_review/<%= a_review.id %>">Delete</a></td>
-    <% end %>
-  </tr>
-  <% end %>
-</tbody>
-    </table>
+    <div class="card-header"></div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Landlord</th>
+            <th>Date of Vacancy</th>
+            <th>Date of Occupancy</th>
+            <th>Caption</th>
+            <th>Useful</th>
+            <th>Stars</th>
+            <th>User</th>
+            <th>City</th>
+            <th>Updated at</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @list_of_reviews.each do |a_review| %>
+          <tr>
+            <td><%= a_review.id %></td>
+            <td><%= a_review.landlord_id %></td>
+            <td><%= a_review.date_occupancy %></td>
+            <td><%= a_review.date_vacancy %></td>
+            <td><%= a_review.text %></td>
+            <td><%= a_review.useful %></td>
+            <td><%= a_review.stars %></td>
+            <td><%= a_review.user_id %></td>
+            <td><%= a_review.city %></td>
+            <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
+            <td><a class="btn btn-primary" href="/reviews/<%= a_review.id %>">Show details</a></td>
+            <% if @current_user %>
+            <td><a class="btn btn-danger" href="/delete_review/<%= a_review.id %>">Delete</a></td>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div> 
-
+</div>
 <hr>
