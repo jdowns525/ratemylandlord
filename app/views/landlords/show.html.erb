@@ -53,7 +53,36 @@
 
 <hr>
 
-<%# connect reviews for each landlord and put in SHOW %>
+<div class="container">
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reviewer</th>
+        <th>Caption</th>
+        <th>Stars</th>
+        <th>Created?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.user.name %></td>
+          <td><%= review.text %></td>
+          <td><%= review.stars %></td>
+          <td><%= time_ago_in_words(review.updated_at) %> ago</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+
+<hr>
+
 
 <% if @current_user == nil %>
 
