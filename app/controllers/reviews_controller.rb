@@ -24,10 +24,13 @@ class ReviewsController < ApplicationController
     the_review.date_vacancy = params.fetch("query_date_vacancy")
     the_review.text = params.fetch("query_text")
     the_review.useful = params.fetch("query_useful")
-    the_review.landlord_id = params.fetch("query_landlord_id")
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
-
+    
+    # Associate the review with a landlord
+    the_landlord = Landlord.find(params.fetch("query_landlord_id"))
+    the_review.landlord = the_landlord
+  
     if the_review.valid?
       the_review.save
       redirect_to("/reviews", { :notice => "Review created successfully." })
