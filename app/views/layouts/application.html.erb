@@ -24,7 +24,7 @@
   <% if session.fetch(:user_id) == nil %>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
      <a class="navbar-brand" href="/">
      <img src="nice.jpg"> My Landlord Ratings</a>
      <button class="navbar-toggler"
@@ -35,15 +35,16 @@
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ms-auto order-0 ">
-      
-      <li class="nav-item active">
-        <a class="nav-link" href="/user_sign_in">Sign In</a>
-      </li>
-      <li class="nav-item">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav ms-auto order-0 ">
+    <li class="nav-item active">
+      <a class="nav-link" href="/user_sign_in">Sign In</a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link"href="/user_sign_up">Sign Up</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="/"> Home </a>
       </li>
