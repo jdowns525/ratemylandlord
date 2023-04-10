@@ -9,11 +9,12 @@
 
 <hr>
 
+
 <% if @current_user == nil %>
 
 <%else %>
 
-<h2 class="container"> Add Landlord </h2>
+<h3 class="container"> Add Landlord </h3>
 
   <div class="card">
     <div class="card-header">
@@ -114,10 +115,7 @@
     <input type="text" class="form-control" id="stars_box" name="query_stars" placeholder="Enter Stars...">
   </div>
 </div>
-  <div class="form-group col-md-9"> 
-    <label for="browser_caption">Caption</label>
-    <textarea id="browser_caption" class="form-control" name="query_caption" placeholder="Enter a caption for the Rating..."></textarea>
-  </div>
+  
 
 
   <button type="submit" class="btn btn-primary">Create landlord</button>
@@ -132,6 +130,7 @@
 
 
 <div class="container">
+<h3 class="my-4">List of Landlords</h3>
   <div class="card">
     <div class="card-header"></div>
     <div class="row">
@@ -182,7 +181,7 @@
 <hr>
 
 <div class="container">
-  <h2 class="my-4">Add New Review</h2>
+  <h3 class="my-4">Add New Review</h3>
   <div class="card">
     <div class="card-header">
       Review Information

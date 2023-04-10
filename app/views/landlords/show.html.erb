@@ -27,12 +27,6 @@
         <dt class="font-weight-bold">Postal code</dt>
         <dd><%= @the_landlord.postal_code %></dd>
 
-        <dt class="font-weight-bold">Latitude</dt>
-        <dd><%= @the_landlord.latitude %></dd>
-
-        <dt class="font-weight-bold">Longitude</dt>
-        <dd><%= @the_landlord.longitude %></dd>
-
         <dt class="font-weight-bold">Stars</dt>
         <dd><%= @the_landlord.stars %></dd>
 
@@ -120,28 +114,14 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col">
-            <label for="latitude_box" class="form-label">Latitude</label>
-            <input type="text" id="latitude_box" name="query_latitude" class="form-control" value="<%= @the_landlord.latitude %>">
-          </div>
-          <div class="col">
-            <label for="longitude_box" class="form-label">Longitude</label>
-            <input type="text" id="longitude_box" name="query_longitude" class="form-control" value="<%= @the_landlord.longitude %>">
-          </div>
+          
         </div>
         <div class="mb-3">
           <label for="stars_box" class="form-label">Stars</label>
           <input type="text" id="stars_box" name="query_stars" class="form-control" value="<%= @the_landlord.stars %>">
         </div>
         <div class="row mb-3">
-          <div class="col">
-            <label for="review_count_box" class="form-label">Review count</label>
-            <input type="text" id="review_count_box" name="query_review_count" class="form-control" value="<%= @the_landlord.review_count %>">
-          </div>
-          <div class="col">
-            <label for="reviews_count_box" class="form-label">Reviews count</label>
-            <input type="text" id="reviews_count_box" name="query_reviews_count" class="form-control" value="<%= @the_landlord.reviews_count %>">
-          </div>
+          
         </div>
         <button type="submit" class="btn btn-primary">Update landlord</button>
       </form>
