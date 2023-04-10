@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def index
     matching_reviews = Review.all
 
