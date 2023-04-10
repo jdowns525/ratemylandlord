@@ -19,6 +19,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    # Validate inputs
+    if params[:query_stars].blank? || params[:query_date_occupancy].blank? || params[:query_date_vacancy].blank? || params[:query_text].blank? || params[:query_useful].blank? || params[:query_user_id].blank? || params[:query_city].blank? || params[:query_landlord_id].blank?
+      redirect_to("/landlords/new", { :alert => "All input fields are required." })
+      return
+    end
+  
+    # Create new review with inputs
     the_review = Review.new
     the_review.stars = params.fetch("query_stars")
     the_review.date_occupancy = params.fetch("query_date_occupancy")
@@ -27,11 +34,12 @@ class ReviewsController < ApplicationController
     the_review.useful = params.fetch("query_useful")
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
-    
+  
     # Associate the review with a landlord
     the_landlord = Landlord.find(params.fetch("query_landlord_id"))
     the_review.landlord = the_landlord
   
+    # Save and redirect based on validation
     if the_review.valid?
       the_review.save
       redirect_to("/reviews", { :notice => "Review created successfully." })
@@ -39,7 +47,7 @@ class ReviewsController < ApplicationController
       redirect_to("/reviews", { :alert => the_review.errors.full_messages.to_sentence })
     end
   end
-
+  
   def update
     the_id = params.fetch("path_id")
     the_review = Review.where({ :id => the_id }).at(0)
