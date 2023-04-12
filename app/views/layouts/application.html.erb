@@ -53,19 +53,13 @@
       <% else %>
 
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/"> 
-        <img src="nice.jpg"> My Landlord Ratings </a>
-          <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="container-fluid" href="/"> 
+        <img src="nice.jpg"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav ms-auto order-0 ">
       <li class="nav-item">
         <a class="nav-link" href="/"> Home </a>
@@ -117,7 +111,7 @@
 
 <style>
   .navbar-brand {
-      height:auto;
+    height:auto;
     width:auto;
     float: left;
     padding-left: 2%;
@@ -141,8 +135,17 @@
 
 html, body {
   height: 100%;
+
+  background-color: #F0ECE3;
 }
+.container {
+  background-color: #F9F5E7;
+}
+
+.btn {
+  background-color: #354259;
+}
+
+
+
 </style>
-
-
-<%= javascript_include_tag 'style' %>

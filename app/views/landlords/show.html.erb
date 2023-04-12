@@ -18,6 +18,9 @@
         <dt class="font-weight-bold">Neighborhood</dt>
         <dd><%= @the_landlord.neighborhood %></dd>
 
+        <dt class="font-weight-bold">City</dt>
+        <dd><%= @the_landlord.city %></dd>
+
         <dt class="font-weight-bold">Address</dt>
         <dd><%= @the_landlord.address %></dd>
 
@@ -98,6 +101,10 @@
         <div class="mb-3">
           <label for="neighborhood_box" class="form-label">Neighborhood</label>
           <input type="text" id="neighborhood_box" name="query_neighborhood" class="form-control" value="<%= @the_landlord.neighborhood %>">
+        </div>
+        <div class="mb-3">
+          <label for="city_box" class="form-label">City</label>
+          <input type="text" id="city_box" name="query_city" class="form-control" value="<%= @the_landlord.city %>">
         </div>
         <div class="mb-3">
           <label for="address_box" class="form-label">Address</label>
