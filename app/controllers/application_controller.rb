@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   end
   
   def force_user_sign_in
-    if @current_user == nil
-      redirect_to("/user_sign_in", { :notice => "You have to sign in first." })
+    unless session[:user_id]
+      redirect_to("/user_sign_in", { :alert => "You have to sign in first." })
     end
   end
 
