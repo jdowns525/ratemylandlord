@@ -129,8 +129,10 @@
 
 
 
+
+
 <div class="container">
-<h3 class="my-4">List of Landlords</h3>
+  <h3 class="my-4">List of Landlords</h3>
   <div class="card">
     <div class="card-header"></div>
     <div class="row">
@@ -153,7 +155,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @list_of_landlords.each do |a_landlord| %>
+            <% @landlords.each do |a_landlord| %>
             <tr>
               <td><%= a_landlord.id %></td>
               <td><%= a_landlord.name %></td>
@@ -171,10 +173,12 @@
             <% end %>
           </tbody>
         </table>
+        <%= will_paginate @landlords %>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

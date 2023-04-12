@@ -5,6 +5,11 @@ class LandlordsController < ApplicationController
 
     @list_of_landlords = matching_landlords.order({ :created_at => :desc })
 
+
+
+
+    @landlords = @list_of_landlords.paginate(page: params[:page], per_page: 5)
+
     render({ :template => "landlords/index.html.erb" })
   end
 
