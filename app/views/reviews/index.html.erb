@@ -88,7 +88,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @list_of_reviews.each do |a_review| %>
+            <% @reviews.each do |a_review| %>
             <tr>
               <td><%= a_review.id %></td>
               <td><%= a_review.landlord_id %></td>
@@ -100,15 +100,15 @@
               <td><%= a_review.user_id %></td>
               <td><%= a_review.city %></td>
               <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
-<td><a href="/reviews/<%= a_review.id %>" class="btn btn-primary">Show details</a></td>
-<td>
-                <%= form_with(url: "/reviews/#{a_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+              <td><a href="/reviews/<%= a_review.id %>" class="btn btn-primary">Show details</a></td>
+              <td><%= form_with(url: "/reviews/#{a_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
                   <%= submit_tag("Delete", class: "btn btn-danger") %></td>
                   <%end%>
-</tr>
-<% end %>
+                  </tr>
+            <% end %>
           </tbody>
         </table>
+        <%= will_paginate @reviews %>
       </div>
     </div>
   </div>
