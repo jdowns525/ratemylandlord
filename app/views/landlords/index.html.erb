@@ -132,6 +132,16 @@
 
 <div class="container">
   <h3 class="my-4">List of Landlords</h3>
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
+        <div class="form-group">
+          <input type="text" class="form-control" name="search" placeholder="Search Landlord Name">
+        </div>
+        <%= submit_tag("Search", class: "btn btn-primary ml-2") %>
+      <% end %>
+    </div>
+  </div>
   <div class="card">
     <div class="card-header"></div>
     <div class="row">
