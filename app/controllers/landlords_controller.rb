@@ -70,12 +70,7 @@ class LandlordsController < ApplicationController
     the_landlord.state = params.fetch("query_state")
     the_landlord.postal_code = params.fetch("query_postal_code")
     the_landlord.city = params.fetch("query_city")
-
-    #the_landlord.latitude = params.fetch("query_latitude")
-    #the_landlord.longitude = params.fetch("query_longitude")
     the_landlord.stars = params.fetch("query_stars")
-    #the_landlord.review_count = params.fetch("query_review_count")
-    #the_landlord.reviews_count = params.fetch("query_reviews_count")
 
     if the_landlord.valid?
       the_landlord.save

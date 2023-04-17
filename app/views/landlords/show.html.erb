@@ -8,7 +8,10 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-items-center">
         <a href="/landlords" class="btn btn-secondary">Go back</a>
-        <a href="/delete_landlord/<%= @the_landlord.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete landlord</a>
+        <td>
+                <%= form_with(url: "/landlords/#{@the_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
+                  <%end%>
       </div>
 
       <dl class="mt-4">
@@ -87,13 +90,14 @@
 <% if @current_user == nil %>
 
 <% else %>
+
 <div class="container">
   <div class="card">
     <div class="card-header">
       <h2>Edit landlord</h2>
     </div>
     <div class="card-body">
-      <form action="/modify_landlord/<%= @the_landlord.id %>" method="post">
+      <form action="/landlords" method="post">
         <div class="mb-3">
           <label for="name_box" class="form-label">Name</label>
           <input type="text" id="name_box" name="query_name" class="form-control" value="<%= @the_landlord.name %>">

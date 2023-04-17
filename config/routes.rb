@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :landlords, only: [:index, :show, :create, :update, :destroy]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   
+  
+  
   get 'user_sign_up', to: 'user_authentication#sign_up_form'
   post 'insert_user', to: 'user_authentication#create'
   
@@ -16,4 +18,3 @@ Rails.application.routes.draw do
   post 'user_verify_credentials', to: 'user_authentication#create_cookie'
   get 'user_sign_out', to: 'user_authentication#destroy_cookies'
 end
-

@@ -179,7 +179,7 @@
               <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
               <td>
                 <%= form_with(url: "/landlords/#{a_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
-                  <%= submit_tag("Delete", class: "btn btn-danger") %>
+                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
                   <%end%>
             </tr>
             <% end %>

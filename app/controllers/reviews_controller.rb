@@ -9,10 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
+    the_id = params[:id]
 
     matching_reviews = Review.where({ :id => the_id })
-
     @the_review = matching_reviews.at(0)
 
     render({ :template => "reviews/show.html.erb" })
@@ -25,7 +24,6 @@ class ReviewsController < ApplicationController
       return
     end
   
-    # Create new review with inputs
     the_review = Review.new
     the_review.stars = params.fetch("query_stars")
     the_review.date_occupancy = params.fetch("query_date_occupancy")
@@ -35,11 +33,10 @@ class ReviewsController < ApplicationController
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
   
-    # Associate the review with a landlord
+   
     the_landlord = Landlord.find(params.fetch("query_landlord_id"))
     the_review.landlord = the_landlord
   
-    # Save and redirect based on validation
     if the_review.valid?
       the_review.save
       redirect_to("/reviews", { :notice => "Review created successfully." })
@@ -49,7 +46,7 @@ class ReviewsController < ApplicationController
   end
   
   def update
-    the_id = params.fetch("path_id")
+    the_id = params[:id]
     the_review = Review.where({ :id => the_id }).at(0)
   
     the_review.stars = params.fetch("query_stars")
@@ -60,23 +57,17 @@ class ReviewsController < ApplicationController
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
   
-    # Check if any changes were made
-    if the_review.changed?
-      # Add additional validation checks
       if the_review.valid?
         the_review.save
         redirect_to("/reviews/#{the_review.id}", { :notice => "Review updated successfully."} )
       else
         redirect_to("/reviews/#{the_review.id}", { :alert => the_review.errors.full_messages.to_sentence })
       end
-    else
-      redirect_to("/reviews/#{the_review.id}", )
-    end
   end
   
 
   def destroy
-    the_id = params.fetch("path_id")
+    the_id = params[:id]
     the_review = Review.where({ :id => the_id }).at(0)
 
     the_review.destroy
