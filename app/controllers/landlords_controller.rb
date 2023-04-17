@@ -2,27 +2,18 @@ class LandlordsController < ApplicationController
   
   def index
     matching_landlords = Landlord.all
-
     @list_of_landlords = matching_landlords.order({ :created_at => :desc })
-
-
-
-
     @landlords = @list_of_landlords.paginate(page: params[:page], per_page: 5)
-
     render({ :template => "landlords/index.html.erb" })
   end
 
   def show
-    the_id = params.fetch("path_id")
-    
+    the_id = params[:id]
     matching_landlords = Landlord.where({ :id => the_id })
     @the_landlord = matching_landlords.at(0)
-  
+
     if @the_landlord.present?
-      # Query for reviews associated with the landlord
       @reviews = @the_landlord.reviews.order({ :created_at => :desc })
-  
       render({ :template => "landlords/show.html.erb" })
     else
       redirect_to("/landlords", { :alert => "Landlord not found." })
@@ -61,7 +52,7 @@ class LandlordsController < ApplicationController
   
 
   def update
-    the_id = params.fetch("path_id")
+    the_id = params[:id]
     the_landlord = Landlord.where({ :id => the_id }).at(0)
 
     the_landlord.name = params.fetch("query_name")
@@ -86,11 +77,9 @@ class LandlordsController < ApplicationController
   end
 
   def destroy
-    the_id = params.fetch("path_id")
+    the_id = params[:id]
     the_landlord = Landlord.where({ :id => the_id }).at(0)
-
     the_landlord.destroy
-
     redirect_to("/landlords", { :notice => "Landlord deleted successfully."} )
   end
 end

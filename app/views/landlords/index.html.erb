@@ -14,13 +14,12 @@
 
 <%else %>
 
-<h3 class="container"> Add Landlord </h3>
+  <h3 class="container"> Add Landlord </h3>
 
-  <div class="card">
-    <div class="card-header">
-  
+    <div class="card">
+      <div class="card-header">
 
-<form action="/insert_landlord" method="post">
+        <form action="/landlords" method="post">
 
 <div class="row mb-3">
   <div class="form-group col-md-3">
@@ -168,7 +167,10 @@
               <td><%= a_landlord.caption %></td>
               <td><%= time_ago_in_words(a_landlord.updated_at) %> ago</td>
               <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
-              <td><a href="/delete_landlord/<%= a_landlord.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+              <td>
+                <%= form_with(url: "/landlords/#{a_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+                  <%= submit_tag("Delete", class: "btn btn-danger") %>
+                  <%end%>
             </tr>
             <% end %>
           </tbody>
@@ -191,7 +193,7 @@
       Review Information
     </div>
     <div class="card-body">
-      <form action="/insert_review" method="post">
+      <form action="/reviews" method="post">
         <div class="form-group row">
           <label for="date_vacancy_box" class="col-md-2 col-form-label">Date of Vacancy</label>
           <div class="col-md-4">
