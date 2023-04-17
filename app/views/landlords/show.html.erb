@@ -1,20 +1,20 @@
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-    <div class="row">
+  <div class="row">
     <div class="col-md-8 offset-md-2">
-      <h1>Landlord #<%= @the_landlord.id %> details</h1>
-<div class="card">
-    <div class="card-header">
-      <div class="d-flex justify-content-between align-items-center">
-        <a href="/landlords" class="btn btn-secondary">Go back</a>
-        <td>
-                <%= form_with(url: "/landlords/#{@the_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
-                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
-                  <%end%>
-      </div>
-
-      <dl class="mt-4">
+      <div class="card">
+        <div class="card-header">
+          <h1>Landlord #<%= @the_landlord.id %> details</h1>
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="/landlords" class="btn btn-secondary">Go back</a>
+            <td>
+              <%= form_with(url: "/landlords/#{@the_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+              <%= submit_tag("Delete", class: "btn btn-danger") %>
+              <% end %>
+            </td>
+          </div>
+        </div>
+        <div class="card-body">
+          <dl class="mt-4">
         <dt class="font-weight-bold">Name</dt>
         <dd><%= @the_landlord.name %></dd>
 
@@ -41,23 +41,20 @@
 
         <dt class="font-weight-bold">Updated at</dt>
         <dd><%= time_ago_in_words(@the_landlord.updated_at) %> ago</dd>
-      </dl>
-    </div>
-    </div>
-    </div>
-  </div>
-</div>
+       </dl>
+        </div>
+      </div>
 
 
 <hr>
 
 
 <div class="card">
-  <div class="card-header">
-    <h2>Landlord's Reviews</h2>
-  </div>
-  <div class="card-body">
-    <div class="table-responsive">
+        <div class="card-header">
+          <h2>Landlord's Reviews</h2>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -84,17 +81,13 @@
 
 <hr>
 
-<% if @current_user == nil %>
-
-<% else %>
-
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h2>Edit landlord</h2>
-    </div>
-    <div class="card-body">
-      <form action="/landlords" method="post">
+<% if @current_user != nil %>
+        <div class="card">
+          <div class="card-header">
+            <h2>Edit landlord</h2>
+          </div>
+          <div class="card-body">
+            <form action="/landlords" method="post">
         <div class="mb-3">
           <label for="name_box" class="form-label">Name</label>
           <input type="text" id="name_box" name="query_name" class="form-control" value="<%= @the_landlord.name %>">
@@ -133,8 +126,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Update landlord</button>
       </form>
-    </div>
-  </div>
-</div>
-<%end%>
+          </div>
+        </div>
+      <% end %>
 <hr>

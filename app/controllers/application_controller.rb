@@ -11,10 +11,11 @@ class ApplicationController < ActionController::Base
   end
   
   def force_user_sign_in
-    unless session[:user_id] || request.path == '/'
+    allowed_paths_pattern = /\A\/(landlords\/\d+)?\z/
+  
+    unless session[:user_id] || request.path.match?(allowed_paths_pattern)
       redirect_to("/user_sign_in", { :alert => "You have to sign in first." })
     end
   end
   
-
 end

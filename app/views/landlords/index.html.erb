@@ -10,6 +10,68 @@
 <hr>
 
 
+<div class="container">
+  <h3 class="my-4">List of Landlords</h3>
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
+        <div class="form-group">
+          <input type="text" class="form-control" name="search" placeholder="Search Landlord Name">
+        </div>
+        <%= submit_tag("Search", class: "btn btn-primary ml-2") %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Neighborhood</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip code</th>
+              <th>Stars</th>
+              <th>Updated at</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @landlords.each do |a_landlord| %>
+            <tr>
+              <td><%= a_landlord.id %></td>
+              <td><%= a_landlord.name %></td>
+              <td><%= a_landlord.neighborhood %></td>
+              <td><%= a_landlord.address %></td>
+              <td><%= a_landlord.city %></td>
+              <td><%= a_landlord.state %></td>
+              <td><%= a_landlord.postal_code %></td>
+              <td><%= a_landlord.stars %></td>
+              <td><%= time_ago_in_words(a_landlord.updated_at) %> ago</td>
+              <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
+              <td>
+                <%= form_with(url: "/landlords/#{a_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
+                  <%end%>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= will_paginate @landlords %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+
 <% if @current_user == nil %>
 
 <%else %>
@@ -124,76 +186,10 @@
 </div>
   </div> <!-- Close card-body -->
 </div> <!-- Close card -->
-<hr>
-
-
-
-
-
-<div class="container">
-  <h3 class="my-4">List of Landlords</h3>
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
-        <div class="form-group">
-          <input type="text" class="form-control" name="search" placeholder="Search Landlord Name">
-        </div>
-        <%= submit_tag("Search", class: "btn btn-primary ml-2") %>
-      <% end %>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header"></div>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Neighborhood</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip code</th>
-              <th>Stars</th>
-              <th>Updated at</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @landlords.each do |a_landlord| %>
-            <tr>
-              <td><%= a_landlord.id %></td>
-              <td><%= a_landlord.name %></td>
-              <td><%= a_landlord.neighborhood %></td>
-              <td><%= a_landlord.address %></td>
-              <td><%= a_landlord.city %></td>
-              <td><%= a_landlord.state %></td>
-              <td><%= a_landlord.postal_code %></td>
-              <td><%= a_landlord.stars %></td>
-              <td><%= time_ago_in_words(a_landlord.updated_at) %> ago</td>
-              <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
-              <td>
-                <%= form_with(url: "/landlords/#{a_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
-                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
-                  <%end%>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <%= will_paginate @landlords %>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
 <hr>
 
+<% if @current_user != nil %>
 <div class="container">
   <h3 class="my-4">Add New Review</h3>
   <div class="card">
@@ -254,6 +250,6 @@
     </div> <!-- Close card-body -->
   </div> <!-- Close card -->
 </div> <!-- Close container -->
-
+<%end%>
   <hr>
 </div>
