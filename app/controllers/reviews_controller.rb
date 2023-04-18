@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   matching_reviews = Review.all
 
   @list_of_reviews = matching_reviews.order({ :created_at => :desc })
-  @reviews = @list_of_reviews.paginate(page: params[:page], per_page: 15)
+  @reviews = @list_of_reviews.paginate(page: params[:page], per_page: 5)
 
   render({ :template => "reviews/index.html.erb" })
 end
