@@ -25,7 +25,7 @@ class LandlordsController < ApplicationController
       @reviews = @the_landlord.reviews.order({ :created_at => :desc })
       render({ :template => "landlords/show.html.erb" })
     else
-      redirect_to("/landlords", { :alert => "Please fill out all fields." })
+      redirect_to("/landlords", { :alert => "All input fields are required." })
     end
   end
   
