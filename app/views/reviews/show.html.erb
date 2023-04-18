@@ -10,8 +10,7 @@
         <div class="col-md-8 offset-md-2">
           <div class="d-flex justify-content-between align-items-center">
             <a href="/reviews" class="btn btn-secondary">Go back</a>
-            <a>
-                <%= form_with(url: "/reviews/#{@the_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+            <a><%= form_with(url: "/reviews/#{@the_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
                   <%= submit_tag("Delete", class: "btn btn-danger") %></a>
                   <%end%>
           </div>
