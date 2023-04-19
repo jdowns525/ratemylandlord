@@ -1,12 +1,12 @@
 databases:
-  - name: MYLANDLORDRATINGS
+  - name: ratemylandlord
     plan: free
-    databaseName: MYLANDLORDRATINGS
+    databaseName: ratemylandlord
     user: testdeploy
 
 services:
   - type: web
-    name: MYLANDLORDRATINGS
+    name: ratemylandlord
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
