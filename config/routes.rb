@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get 'user_sign_up', to: 'user_authentication#sign_up_form'
   post 'insert_user', to: 'user_authentication#create'
+
   
   get 'edit_user_profile', to: 'user_authentication#edit_profile_form'
   post 'modify_user', to: 'user_authentication#update'
