@@ -86,4 +86,20 @@ class LandlordsController < ApplicationController
     the_landlord.destroy
     redirect_to("/landlords", { :notice => "Landlord deleted successfully."} )
   end
+
+  def home
+
+    if params[:search].present?
+      search_query = params[:search].downcase
+      matching_landlords = Landlord.where("lower(name) LIKE ?", "%#{search_query}%")
+    else
+      matching_landlords = Landlord.all
+    end
+  
+    @list_of_landlords = matching_landlords.order({ :created_at => :desc })
+    @landlords = @list_of_landlords.paginate(page: params[:page], per_page: 5)
+  
+    render({ :template => "landlords/home.html.erb" })
+
+  end
 end

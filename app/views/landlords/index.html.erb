@@ -1,9 +1,17 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+  <div class="dope">
+    <h1>MyLandlordRatings</h1>
+  </div>
+  </div>
+</div>
 
 <hr>
 
 
 <div class="container">
-  <h3 class="my-4">MyLandlordRatings</h3>
+  <h3 class="my-4">List of Landlords</h3>
   <div class="row mb-4">
     <div class="col-md-12">
       <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
@@ -16,18 +24,17 @@
   </div>
   <div class="row mb-4">
     <div class="col-md-12">
-      <a href="/landlords/new" class="btn btn-primary">Create Landlord</a>
-      <a href="/reviews/new" class="btn btn-secondary ml-2">Add Review</a>
+      <a href="/reviews" class="btn btn-secondary ml-2">Add Review</a>
     </div>
   </div>
   <div class="card">
-    <div class="card-header">List of Landlords</div>
+    <div class="card-header">Landlords</div>
     <div class="row">
       <div class="col-md-12 table-responsive">
         <table class="table table-striped">
           <thead class="thead-dark">
             <tr>
-             <th>Name</th>
+          <th>Name</th>
           <th>Neighborhood</th>
           <th>Address</th>
           <th>City</th>

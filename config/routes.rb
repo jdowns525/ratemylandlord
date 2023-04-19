@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'landlords#index'
+  root 'landlords#home'
   
   resources :categories, only: [:index, :show, :create, :update, :destroy]
-  resources :landlords, only: [:index, :show, :create, :update, :destroy]
+  resources :landlords, only: [:index, :show, :create, :update, :destroy, :home]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   
   
