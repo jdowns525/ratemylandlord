@@ -2,7 +2,7 @@ databases:
   - name: ratemylandlord
     plan: free
     databaseName: ratemylandlord
-    user: testdeploy
+    user: ratemylandlord
 
 services:
   - type: web
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: testdeploy
+          name: ratemylandlord
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
