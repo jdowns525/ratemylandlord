@@ -6,7 +6,7 @@ class UserAuthenticationController < ApplicationController
     matching_reviews = Review.all
 
     @list_of_reviews = matching_reviews.order({ :created_at => :desc })
-    
+
     render({ :template => "user_authentication/index.html.erb"})
   end
 
@@ -16,17 +16,17 @@ class UserAuthenticationController < ApplicationController
 
   def create_cookie
     user = User.where({ :email => params.fetch("query_email") }).first
-    
+
     the_supplied_password = params.fetch("query_password")
-    
+
     if user != nil
       are_they_legit = user.authenticate(the_supplied_password)
-    
+
       if are_they_legit == false
         redirect_to("/user_sign_in", { :alert => "Incorrect password." })
       else
         session[:user_id] = user.id
-      
+
         redirect_to("/", { :notice => "Signed in successfully." })
       end
     else
@@ -45,24 +45,16 @@ class UserAuthenticationController < ApplicationController
   end
 
   def create
-    @user = User.new
-    @user.email = params.fetch("query_email")
-    @user.password = params.fetch("query_password")
-    @user.password_confirmation = params.fetch("query_password_confirmation")
-    @user.user_id = params.fetch("query_user_id")
-    @user.name = params.fetch("query_name")
-    
-    save_status = @user.save
+    user = User.new(user_params)
 
-    if save_status == true
-      session[:user_id] = @user.id
-   
+    if user.save
+      session[:user_id] = user.id
       redirect_to("/", { :notice => "User account created successfully."})
     else
-      redirect_to("/user_sign_up", { :alert => @user.errors.full_messages.to_sentence })
+      redirect_to("/user_sign_up", { :alert => user.errors.full_messages.to_sentence })
     end
   end
-    
+
   def edit_profile_form
     render({ :template => "user_authentication/edit_profile.html.erb" })
   end
@@ -76,7 +68,7 @@ class UserAuthenticationController < ApplicationController
     @user.name = params.fetch("query_name")
     @user.review_count = params.fetch("query_review_count")
     @user.average_stars = params.fetch("query_average_stars")
-    
+
     if @user.valid?
       @user.save
 
@@ -89,8 +81,13 @@ class UserAuthenticationController < ApplicationController
   def destroy
     @current_user.destroy
     reset_session
-    
+
     redirect_to("/", { :notice => "User account cancelled" })
   end
- 
+
+  private
+
+  def user_params
+    params.require(:user).permit(:query_email, :query_user_id, :query_name, :query_password, :query_password_confirmation)
+  end
 end
