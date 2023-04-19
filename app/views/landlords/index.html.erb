@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="card">
-    <div class="card-header"></div>
+    <div class="card-header">Landlords</div>
     <div class="row">
       <div class="col-md-12 table-responsive">
         <table class="table table-striped">
@@ -54,7 +54,7 @@
               <td><%= a_landlord.postal_code %></td>
               <td><%= a_landlord.stars %></td>
               <td><%= time_ago_in_words(a_landlord.updated_at) %> ago</td>
-              <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary">Show details</a></td>
+              <td><a href="/landlords/<%= a_landlord.id %>" class="btn btn-primary"> Details</a></td>
               <td>
                 <%= form_with(url: "/landlords/#{a_landlord.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
                   <%= submit_tag("Delete", class: "btn btn-danger") %></td>
@@ -220,10 +220,8 @@
           <div class="col-md-2">
             <input type="text" class="form-control" id="city_box" name="query_city">
           </div>
-          <label for="user_id_box" class="col-md-2 col-form-label">User ID</label>
-          <div class="col-md-2">
-            <input type="text" class="form-control" id="user_id_box" name="query_user_id">
-          </div>
+          <input type="hidden" name="query_user_id" value="<%= @current_user.id %>">
+          
           <label for="landlord_id_box" class="col-md-2 col-form-label">Landlord ID</label>
           <div class="col-md-2">
             <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">

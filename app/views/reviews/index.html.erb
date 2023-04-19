@@ -25,7 +25,7 @@
               <th>Stars</th>
               <th>User</th>
               <th>City</th>
-              <th>Updated at</th>
+              <th>Updated</th>
               <th></th>
               <th></th>
             </tr>
@@ -43,7 +43,7 @@
               <td><%= a_review.user_id %></td>
               <td><%= a_review.city %></td>
               <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
-              <td><a href="/reviews/<%= a_review.id %>" class="btn btn-primary">Show details</a></td>
+              <td><a href="/reviews/<%= a_review.id %>" class="btn btn-primary"> Details</a></td>
               <td><%= form_with(url: "/reviews/#{a_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
                   <%= submit_tag("Delete", class: "btn btn-danger") %></td>
                   <%end%>
@@ -59,57 +59,63 @@
 
 <hr>
 
-<% if @current_user == nil %>
+<% if @current_user != nil %>
+<div class="container">
+  <h3 class="my-4">Add New Review</h3>
+  <div class="card">
+    <div class="card-header">
+      Review Information
+    </div>
+    <div class="card-body">
+      <form action="/reviews" method="post">
+        <div class="form-group row">
+          <label for="date_vacancy_box" class="col-md-2 col-form-label">Date of Vacancy</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_vacancy_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+          <label for="date_occupancy_box" class="col-md-2 col-form-label">Date of Occupancy</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_occupancy_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+        </div>
 
-<% else %>
+        <div class="form-group">
+          <label for="text_box">Text</label>
+          <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+        </div>
 
+        <div class="form-group row">
+          <label for="city_box" class="col-md-2 col-form-label">City</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="city_box" name="query_city">
+          </div>
+          <input type="hidden" name="query_user_id" value="<%= @current_user.id %>">
+          
+          <label for="landlord_id_box" class="col-md-2 col-form-label">Landlord ID</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
+          </div>
+        </div>
 
+        <div class="form-group row">
+          <label for="stars_box" class="col-md-2 col-form-label">Stars</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="stars_box" name="query_stars">
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Useful?</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_useful">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
 
-<h2 class="container">Add New Review</h2>
-<div class="card">
-  <div class="card-header">
-    <form action="/reviews" method="post">
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="vacancy_box">Date of Vacancy</label>
-          <input type="date" class="form-control" id="date_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create Review</button>
         </div>
-        <div class="col-md-6">
-          <label for="date_box">Date of Occupancy</label>
-          <input type="date" class="form-control" id="date_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="text_box">Text</label>
-        <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
-      </div>
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label for="city_box">City</label>
-          <input type="text" class="form-control" id="city_box" name="query_city">
-        </div>
-        <div class="col-md-2">
-          <label for="user_id_box">User ID</label>
-          <input type="text" class="form-control" id="user_id_box" name="query_user_id">
-        </div>
-        <div class="col-md-2">
-          <label for="landlord_id_box">Landlord ID</label>
-          <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
-        </div>
-        <div class="col-md-2">
-          <label for="stars_box">Stars</label>
-          <input type="text" class="form-control" id="stars_box" name="query_stars">
-        </div>
-        <div class="col-md-2">
-          <label for="useful_box">Useful?</label>
-          <select class="form-control" id="useful_box" name="query_useful">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Create review</button>
-    </form>
-  </div>
-</div>
+      </form>
+    </div> <!-- Close card-body -->
+  </div> <!-- Close card -->
+</div> <!-- Close container -->
 <%end%>
