@@ -38,7 +38,7 @@ class LandlordsController < ApplicationController
   
 
   def create
-    if params[:query_name].blank? || params[:query_neighborhood].blank? || params[:query_address].blank? || params[:query_state].blank? || params[:query_postal_code].blank? || params[:query_stars].blank?
+    if params[:query_name].blank? || params[:query_neighborhood].blank? || params[:query_address].blank? || params[:query_state].blank? || params[:query_postal_code].blank?
       redirect_to("/landlords/new", { :alert => "All input fields are required." })
       return
     end
@@ -52,7 +52,7 @@ class LandlordsController < ApplicationController
     the_landlord.city = params.fetch("query_city")
     #the_landlord.latitude = params.fetch("query_latitude")
     #the_landlord.longitude = params.fetch("query_longitude")
-    the_landlord.stars = params.fetch("query_stars")
+    #the_landlord.stars = params.fetch("query_stars")
     #the_landlord.review_count = params.fetch("query_review_count")
     #the_landlord.reviews_count = params.fetch("query_reviews_count")
   
@@ -117,4 +117,3 @@ class LandlordsController < ApplicationController
     end
   end
 end
-

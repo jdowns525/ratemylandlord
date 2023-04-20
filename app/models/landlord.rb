@@ -23,4 +23,13 @@ class Landlord < ApplicationRecord
 
   has_many(:reviews, { :class_name => "Review", :foreign_key => "landlord_id", :dependent => :destroy })
   has_many(:categories, { :class_name => "Category", :foreign_key => "landlord_id", :dependent => :destroy })
+
+  def update_average_rating
+    if self.reviews.present?
+      average_rating = self.reviews.average(:stars)
+      self.update(stars: average_rating)
+    else
+      self.update(stars: 0)
+    end
+  end
 end

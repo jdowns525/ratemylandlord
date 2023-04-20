@@ -34,7 +34,7 @@
             <% @reviews.each do |a_review| %>
             <tr>
               
-              <td><%= a_review.landlord_id %></td>
+              <td><%= link_to a_review.landlord_id, landlord_path(a_review.landlord) %></td>
               <td><%= a_review.date_occupancy %></td>
               <td><%= a_review.date_vacancy %></td>
               <td><%= a_review.text %></td>

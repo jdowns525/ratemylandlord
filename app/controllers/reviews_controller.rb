@@ -40,6 +40,7 @@ end
   
     if the_review.valid?
       the_review.save
+      the_landlord.update_average_rating
       redirect_to("/reviews", { :notice => "Review created successfully." })
     else
       redirect_to("/reviews", { :alert => the_review.errors.full_messages.to_sentence })
@@ -58,12 +59,13 @@ end
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
   
-      if the_review.valid?
-        the_review.save
-        redirect_to("/reviews/#{the_review.id}", { :notice => "Review updated successfully."} )
-      else
-        redirect_to("/reviews/#{the_review.id}", { :alert => the_review.errors.full_messages.to_sentence })
-      end
+    if the_review.valid?
+      the_review.save
+      the_review.landlord.update_average_rating
+      redirect_to("/reviews/#{the_review.id}", { :notice => "Review updated successfully."} )
+    else
+      redirect_to("/reviews/#{the_review.id}", { :alert => the_review.errors.full_messages.to_sentence })
+    end
   end
   
 
