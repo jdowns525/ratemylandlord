@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: ENV.fetch('DEFAULT_URL_HOST', 'mylandlordratings.org') }
+  config.action_mailer.default_url_options = { host: ENV.fetch('DEFAULT_URL_HOST') }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
@@ -43,7 +43,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = ENV.fetch('ASSET_HOST', 'https://assets.example.com')
+  config.action_controller.asset_host = ENV.fetch('ASSET_HOST', 'https://assets.mylandlordratings.org')
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
