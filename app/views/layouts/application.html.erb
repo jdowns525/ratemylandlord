@@ -25,63 +25,61 @@
 
 <div>
   <nav class="navbar navbar-expand-lg">
-     <a class="container-fluid" href="/"> 
-     <img src="nice.jpg"> </a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="keyhole.jpg" class="navbar-logo">  </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-<div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav ms-auto order-0 ">
-      <li class="nav-item">
-      <a class="nav-link" href="/user_sign_in">Sign In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/user_sign_up">Sign Up</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/">Home</a>
-    </li>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/user_sign_in">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user_sign_up">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
 
-
-      <% else %>
+<% else %>
 
 <div>
-    <nav class="navbar navbar-expand-lg">
-      <a class="container-fluid" href="/"> 
-        <img src="nice.jpg"> </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav ms-auto order-0 ">
-      <li class="nav-item">
-        <a class="nav-link" href="/"> Home </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/reviews">Profile </a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/landlords">Landlords</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/edit_user_profile">Edit Profile</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/user_sign_out">Sign Out</a>
-      </li>
-</div>
-
-      <% end%>
-    </ul>
-
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="keyhole.jpg" class="navbar-logo">  </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reviews">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/landlords">Landlords</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/edit_user_profile">Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user_sign_out">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
+</div>
+<% end%>
+ 
 
   <% if notice.present? %>
       <div style="border: thin green solid; color: green">
@@ -116,6 +114,10 @@
   padding-left: 2%;
   margin: 0 auto;
   padding: 10px 0;
+}
+.navbar-logo {
+  height: 70px; /* Adjust this value according to your navbar height */
+  width: auto;
 }
 
 .nav-item {
@@ -167,4 +169,5 @@ body {
     padding: 10px 20px;
   }
 }
+
 </style>
