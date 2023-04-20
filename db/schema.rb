@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_20_162453) do
+ActiveRecord::Schema.define(version: 2023_04_20_030605) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "landlord_id"
@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 2023_04_20_162453) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city"
     t.text "caption"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_landlords_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -75,5 +73,4 @@ ActiveRecord::Schema.define(version: 2023_04_20_162453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "landlords", "users"
 end
