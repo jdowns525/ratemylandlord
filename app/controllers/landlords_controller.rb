@@ -1,9 +1,15 @@
 class LandlordsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :destroy, :new, :edit]
   
   def index
     if params[:search].present?
       search_query = params[:search].downcase
       matching_landlords = Landlord.where("lower(name) LIKE ?", "%#{search_query}%")
+  
+      if matching_landlords.empty?
+        flash.now[:alert] = "Landlord not available." unless @current_user
+      end
+  
     else
       matching_landlords = Landlord.all
     end
@@ -102,4 +108,13 @@ class LandlordsController < ApplicationController
     render({ :template => "landlords/home.html.erb" })
 
   end
+
+  private
+
+  def authenticate_user!
+    unless @current_user
+      redirect_to("/user_sign_in", { :alert => "You have to sign in first." })
+    end
+  end
 end
+
