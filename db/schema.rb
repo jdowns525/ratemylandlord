@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_20_011600) do
+ActiveRecord::Schema.define(version: 2023_04_20_030605) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "landlord_id"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 2023_04_20_011600) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "date_occupancy"
     t.date "date_vacancy"
+    t.boolean "responsiveness"
+    t.boolean "maintenance_and_repairs"
+    t.boolean "communication"
+    t.boolean "respectfulness"
   end
 
   create_table "support_requests", force: :cascade do |t|
