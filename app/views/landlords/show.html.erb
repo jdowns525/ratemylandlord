@@ -79,11 +79,12 @@
 <hr>
 
 <% if @current_user != nil %>
-        <div class="card">
-          <div class="card-header">
-            <h2>Edit landlord</h2>
-          </div>
-          <div class="card-body">
+  <% if @current_user == @the_landlord.user %>
+    <div class="card">
+      <div class="card-header">
+        <h2>Edit landlord</h2>
+      </div>
+      <div class="card-body">
             <form action="/landlords" method="post">
         <div class="mb-3">
           <label for="name_box" class="form-label">Name</label>
@@ -120,7 +121,16 @@
         </div>
         <button type="submit" class="btn btn-primary">Update landlord</button>
       </form>
-          </div>
-        </div>
-      <% end %>
+     </div>
+    </div>
+  <% else %>
+    <div class="alert alert-danger" role="alert">
+      You are not authorized to edit this profile.
+    </div>
+  <% end %>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    Please log in to edit this profile.
+  </div>
+<% end %>
 <hr>
