@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   
   
-  
+  get "/support", to: "support#new"
+  post "/support", to: "support#create"
+
   get 'user_sign_up', to: 'user_authentication#sign_up_form'
   post 'insert_user', to: 'user_authentication#create'
 
