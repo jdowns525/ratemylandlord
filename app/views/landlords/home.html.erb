@@ -10,7 +10,7 @@
   <hr>
 
   <div class="col-md-12">
-    <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
+    <%= form_with(url: "/landlords/", method: "get", local: true, html: { class: "form-inline" }) do %>
       <div class="form-group">
         <input type="text" class="form-control" name="search" placeholder="Search Landlord Name">
       </div>
@@ -18,4 +18,3 @@
     <% end %>
   </div>
 </div>
-
