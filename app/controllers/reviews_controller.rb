@@ -9,14 +9,16 @@ class ReviewsController < ApplicationController
   render({ :template => "reviews/index.html.erb" })
 end
 
-  def show
-    the_id = params[:id]
+def show
+  the_id = params[:id]
+  matching_reviews = Review.where({ :id => the_id })
+  @the_review = matching_reviews.at(0)
 
-    matching_reviews = Review.where({ :id => the_id })
-    @the_review = matching_reviews.at(0)
+  # Fetch messages related to the review
+  @messages = @the_review.messages.order({ :created_at => :asc })
 
-    render({ :template => "reviews/show.html.erb" })
-  end
+  render({ :template => "reviews/show.html.erb" })
+end
 
   def create
     # Validate inputs

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :create, :update, :destroy]
   resources :landlords, only: [:index, :show, :create, :update, :destroy, :home]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
-  
+  resources :messages, only: [:create]
   
   get "/support", to: "support#new"
   post "/support", to: "support#create"

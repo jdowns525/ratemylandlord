@@ -11,7 +11,7 @@
 
 
 <div class="container">
-  <h3 class="my-4">List of Landlords</h3>
+  <h3 class="my-4">Find your Landlord</h3>
   <div class="row mb-4">
     <div class="col-md-12">
       <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
@@ -24,7 +24,7 @@
   </div>
   <div class="row mb-4">
     <div class="col-md-12">
-      <a href="/reviews" class="btn btn-secondary ml-2">Add Review</a>
+      <a href="/reviews" class="btn btn-secondary ml-2"> Write a Review</a>
     </div>
   </div>
   <div class="card">
@@ -80,7 +80,7 @@
 
 <%else %>
 
-  <h3 class="container"> Add New Landlord </h3>
+  <h3 class="container"> Create Landlord </h3>
 
     <div class="card">
       <div class="card-header">
@@ -189,7 +189,7 @@
 
 <% if @current_user != nil %>
 <div class="container">
-  <h3 class="my-4">Add New Review</h3>
+  <h3 class="my-4">Write a Review</h3>
   <div class="card">
     <div class="card-header">
       Review Information
