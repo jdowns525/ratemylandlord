@@ -13,10 +13,12 @@ class SupportController < ApplicationController
   
     if support_request.save
       
+      SupportMailer.support_request_email(support_request).deliver_now
   
       redirect_to("/support", { :notice => "Your support request has been submitted." })
     else
       redirect_to("/support", { :alert => support_request.errors.full_messages.to_sentence })
     end
   end
+  
 end
