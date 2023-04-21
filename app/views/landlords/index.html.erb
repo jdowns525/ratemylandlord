@@ -22,10 +22,77 @@
       <% end %>
     </div>
   </div>
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <a href="/reviews" class="btn btn-secondary ml-2"> Write a Review</a>
+  <% if @current_user != nil %>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary my-4" data-toggle="modal" data-target="#writeReviewModal">
+    Write a Review
+  </button>
+
+  <!-- Write a Review Modal -->
+  <div class="modal fade" id="writeReviewModal" tabindex="-1" role="dialog" aria-labelledby="writeReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="writeReviewModalLabel">Review Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/reviews" method="post">
+        <div class="form-group row">
+          <label for="date_vacancy_box" class="col-md-2 col-form-label">Move/Out</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_vacancy_box" name="query_date_vacancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+          <label for="date_occupancy_box" class="col-md-2 col-form-label">Move/In</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date_occupancy_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="text_box">Description</label>
+          <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+        </div>
+
+        <div class="form-group row">
+          <label for="city_box" class="col-md-2 col-form-label">City</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="city_box" name="query_city">
+          </div>
+          <input type="hidden" name="query_user_id" value="<%= @current_user.id %>">
+          
+          <label for="landlord_id_box" class="col-md-2 col-form-label">Landlord ID</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="stars_box" class="col-md-2 col-form-label">Stars</label>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="stars_box" name="query_stars">
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Useful?</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_useful">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create Review</button>
+        </div>
+         </form>
+        </div>
+      </div>
     </div>
+  </div>
+<%end%>
+
   </div>
   <div class="card">
     <div class="card-header">Landlords</div>

@@ -26,14 +26,17 @@ class LandlordsController < ApplicationController
     the_id = params[:id]
     matching_landlords = Landlord.where({ :id => the_id })
     @the_landlord = matching_landlords.at(0)
-
+  
     if @the_landlord.present?
       @reviews = @the_landlord.reviews.order({ :created_at => :desc })
       render({ :template => "landlords/show.html.erb" })
     else
-      redirect_to("/landlords", { :alert => "All input fields are required." })
+      # Redirect to the main Landlords page with an error message
+      flash[:error] = "Landlord not found."
+      redirect_to landlords_path
     end
   end
+  
   
   
 

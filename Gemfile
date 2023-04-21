@@ -15,6 +15,7 @@ gem 'sassc-rails'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap'
+gem 'mail'
 
 group :development do
   gem 'htmlbeautifier'
