@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_20_205052) do
+ActiveRecord::Schema.define(version: 2023_04_21_035401) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "landlord_id"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2023_04_20_205052) do
     t.string "average_stars"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "role"
+    t.string "landlord_type"
   end
 
   add_foreign_key "landlords", "users"
