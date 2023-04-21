@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :landlords, only: [:index, :show, :create, :update, :destroy, :home]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :messages, only: [:create]
+
+  get '/search', to: 'home#search'
   
   get "/support", to: "support#new"
   post "/support", to: "support#create"
