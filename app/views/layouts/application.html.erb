@@ -7,19 +7,10 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<!-- jQuery, Popper.js, and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
-<meta charset="utf-8">
-
-<!-- Make it responsive to small screens -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%= csp_meta_tag %>
 
@@ -72,27 +63,34 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav ms-auto">
+        
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/reviews">Profile</a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/landlords">Landlords</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/reviews">My Reviews</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/edit_user_profile">Edit Profile</a>
           </li>
+
           <li class="nav-item">
           <a class="nav-link" href="/support">Support</a>
           </li>
+
           <li class="nav-item">
-              <form class="d-flex" action="/search" method="get">
-                <input class="form-control me-6" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </li>
+            <form class="d-flex align-items-center" action="/search" method="get">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" style="border-radius: 20px; padding-left: 1rem;">
+              <button class="btn btn-outline-success" type="submit" style="border-radius: 20px;">Search</button>
+            </form>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/user_sign_out">Sign Out</a>
           </li>

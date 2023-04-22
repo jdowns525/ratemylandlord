@@ -49,14 +49,17 @@ class UserAuthenticationController < ApplicationController
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    #@user.user_id = params.fetch("query_user_id")
     @user.name = params.fetch("query_name")
     
+    Rails.logger.debug("Submitted user_role: #{params.fetch("user_role")}") # Add this line
+    
+    @user.user_role = params.fetch("user_role")
+  
     save_status = @user.save
-
+  
     if save_status == true
       session[:user_id] = @user.id
-   
+  
       redirect_to("/", { :notice => "User account created successfully."})
     else
       redirect_to("/user_sign_up", { :alert => @user.errors.full_messages.to_sentence })

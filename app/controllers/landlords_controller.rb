@@ -4,7 +4,7 @@ class LandlordsController < ApplicationController
   def index
     if params[:search].present?
       search_query = params[:search].downcase
-      matching_landlords = Landlord.where("lower(name) LIKE ?", "%#{search_query}%")
+      matching_landlords = Landlord.where("lower(name) LIKE ? OR lower(address) LIKE ? OR lower(neighborhood) LIKE ?", "%#{search_query}%", "%#{search_query}%", "%#{search_query}%")
   
       if matching_landlords.empty?
         flash.now[:alert] = "Landlord not available." unless @current_user
