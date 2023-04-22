@@ -8,9 +8,9 @@
 #  cool                    :integer
 #  date_occupancy          :date
 #  date_vacancy            :date
-#  maintenance_and_repairs :boolean
-#  respectfulness          :boolean
-#  responsiveness          :boolean
+#  maintenance_and_repairs :string
+#  respectfulness          :string
+#  responsiveness          :string
 #  stars                   :integer
 #  text                    :text
 #  useful                  :string

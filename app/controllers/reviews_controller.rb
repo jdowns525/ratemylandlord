@@ -35,6 +35,9 @@ def create
   the_review.useful = params.fetch("query_useful")
   the_review.user_id = params.fetch("query_user_id")
   the_review.city = params.fetch("query_city")
+  the_review.maintenance_and_repairs = params.fetch("query_maintenance_and_repairs")
+  the_review.respectfulness = params.fetch("query_respectfulness")
+  the_review.responsiveness = params.fetch("query_responsiveness")
 
   begin
     the_landlord = Landlord.find(params.fetch("query_landlord_id"))
@@ -66,6 +69,9 @@ end
     the_review.landlord_id = params.fetch("query_landlord_id")
     the_review.user_id = params.fetch("query_user_id")
     the_review.city = params.fetch("query_city")
+    the_review.maintenance_and_repairs = params.fetch("query_maintenance_and_repairs")
+    the_review.respectfulness = params.fetch("query_respectfulness")
+    the_review.responsiveness = params.fetch("query_responsiveness")
   
     if the_review.valid?
       the_review.save

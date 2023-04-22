@@ -4,10 +4,7 @@
       <div><h1>My Reviews</h1></div>
     </div>
   </div>
-
-
 <hr>
-
 <div class="container">
   <div class="card">
     <div class="card-header">Reviews</div>
@@ -16,12 +13,17 @@
         <table class="table table-striped">
           <thead>
             <tr>
+
+            <tr>
               
               <th>Landlord</th>
-              <th>Date of Vacancy</th>
-              <th>Date of Occupancy</th>
+              <th>Move/Out</th>
+              <th>Move/In</th>
               <th>Caption</th>
               <th>Useful</th>
+              <th>Maintenance</th>
+              <th>Respectful</th>
+              <th>Responsive</th>
               <th>Stars</th>
               <th>User</th>
               <th>City</th>
@@ -39,15 +41,15 @@
               <td><%= a_review.date_vacancy %></td>
               <td><%= a_review.text %></td>
               <td><%= a_review.useful %></td>
+              <td><%= a_review.maintenance_and_repairs %></td>
+              <td><%= a_review.respectfulness %></td>
+              <td><%= a_review.responsiveness %></td>
               <td><%= a_review.stars %></td>
               <td><%= a_review.user_id %></td>
               <td><%= a_review.city %></td>
               <td><%= time_ago_in_words(a_review.updated_at) %> ago</td>
               <td><a href="/reviews/<%= a_review.id %>" class="btn btn-primary"> Details</a></td>
-              <td><%= form_with(url: "/reviews/#{a_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
-                  <%= submit_tag("Delete", class: "btn btn-danger") %></td>
-                  <%end%>
-                  </tr>
+              
             <% end %>
           </tbody>
         </table>
@@ -111,9 +113,30 @@
           <div class="col-md-2">
             <input type="text" class="form-control" id="stars_box" name="query_stars">
           </div>
-          <label for="useful_box" class="col-md-2 col-form-label">Useful?</label>
+          <label for="useful_box" class="col-md-2 col-form-label">Useful</label>
           <div class="col-md-2">
             <select class="form-control" id="useful_box" name="query_useful">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Maintenance</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_maintenance_and_repairs">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Respect</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_respectfulness">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <label for="useful_box" class="col-md-2 col-form-label">Response</label>
+          <div class="col-md-2">
+            <select class="form-control" id="useful_box" name="query_responsiveness">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
