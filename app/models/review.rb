@@ -13,7 +13,7 @@
 #  responsiveness          :boolean
 #  stars                   :integer
 #  text                    :text
-#  useful                  :integer
+#  useful                  :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #  landlord_id             :integer

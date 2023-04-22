@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_22_162115) do
+ActiveRecord::Schema.define(version: 2023_04_22_171344) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "landlord_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2023_04_22_162115) do
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "text"
-    t.integer "useful"
+    t.string "useful"
     t.integer "cool"
     t.integer "landlord_id"
     t.integer "user_id"
