@@ -15,7 +15,9 @@ class UserAuthenticationController < ApplicationController
   end
 
   def create_cookie
-    user = User.where({ :email => params.fetch("query_email") }).first
+    # Convert the email to lowercase before processing
+    email = params.fetch("query_email").downcase
+    user = User.where({ :email => email }).first
     
     the_supplied_password = params.fetch("query_password")
     
@@ -34,6 +36,7 @@ class UserAuthenticationController < ApplicationController
     end
   end
 
+  
   def destroy_cookies
     reset_session
 
