@@ -1,57 +1,76 @@
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="card-body">
-        <div class="card-header">
-          <h1 class="card-title">Review #<%= @the_review.id %> Details</h1>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-8 offset-md-2">
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="/reviews" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Go back</a>
-                  <a><%= form_with(url: "/reviews/#{@the_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
-                    <%= submit_tag("Delete", class: "btn btn-danger") %></a>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="col-md-8 offset-md-2">
-                <dl class="row">
-                  <dt class="col-sm-3 font-weight-bold">Stars</dt>
-                  <dd class="col-sm-9"><%= @the_review.stars %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Date of Vacancy</dt>
-                  <dd class="col-sm-9"><%= @the_review.date_vacancy %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Date of Occupancy</dt>
-                  <dd class="col-sm-9"><%= @the_review.date_occupancy %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Text</dt>
-                  <dd class="col-sm-9"><%= @the_review.text %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Useful</dt>
-                  <dd class="col-sm-9"><%= @the_review.useful %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Maintenance?</dt>
-                  <dd class="col-sm-9"><%= @the_review.maintenance_and_repairs %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Respect?</dt>
-                  <dd class="col-sm-9"><%= @the_review.respectfulness %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Response Time?</dt>
-                  <dd class="col-sm-9"><%= @the_review.responsiveness %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Landlord</dt>
-                  <dd class="col-sm-9"><%= @the_review.landlord_id %></dd>
-                  <dt class="col-sm-3 font-weight-bold">User</dt>
-                  <dd class="col-sm-9"><%= @the_review.user_id %></dd>
-                  <dt class="col-sm-3 font-weight-bold">City</dt>
-                  <dd class="col-sm-9"><%= @the_review.city %></dd>
-                  <dt class="col-sm-3 font-weight-bold">Updated at</dt>
-                  <dd class="col-sm-9"><%= time_ago_in_words(@the_review.updated_at) %> ago</dd>
-                </dl>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header">
+        <h1 class="card-title">Review #<%= @the_review.id %> Details</h1>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="/reviews" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Go back</a>
+                <a><%= form_with(url: "/reviews/#{@the_review.id}", method: "delete", html: { onsubmit: "return confirm('Are you sure you want to delete?')" }) do %>
+                  <%= submit_tag("Delete", class: "btn btn-danger") %></a>
+                <% end %>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <hr>
+          <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Stars</dt>
+                <dd class="col-sm-9"><%= @the_review.stars %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Date of Vacancy</dt>
+                <dd class="col-sm-9"><%= @the_review.date_vacancy %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Date of Occupancy</dt>
+                <dd class="col-sm-9"><%= @the_review.date_occupancy %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Text</dt>
+                <dd class="col-sm-9"><%= @the_review.text %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Useful</dt>
+                <dd class="col-sm-9"><%= @the_review.useful %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Maintenance?</dt>
+                <dd class="col-sm-9"><%= @the_review.maintenance_and_repairs %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Respect?</dt>
+                <dd class="col-sm-9"><%= @the_review.respectfulness %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Response Time?</dt>
+                <dd class="col-sm-9"><%= @the_review.responsiveness %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Landlord</dt>
+                <dd class="col-sm-9"><%= @the_review.landlord_id %></dd>
+              </dl>
+              <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">User</dt>
+                <dd class="col-sm-9"><%= @the_review.user_id %></dd>
+              </dl>
+              <dl class="row">
+              <dt class="col-sm-3 font-weight-bold">User</dt>
+              <dd class="col-sm-9"><%= @the_review.user_id %></dd>
+              </dl>
+              <dl class="row">
+              <dt class="col-sm-3 font-weight-bold">City</dt>
+              <dd class="col-sm-9"><%= @the_review.city %></dd>
+              </dl>
+              <dl class="row">
+              <dt class="col-sm-3 font-weight-bold">Updated at</dt>
+              <dd class="col-sm-9"><%= time_ago_in_words(@the_review.updated_at) %> ago</dd>
+              </dl>
 
 <% if @current_user == nil %>
 
@@ -61,6 +80,14 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
   Edit
 </button>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
