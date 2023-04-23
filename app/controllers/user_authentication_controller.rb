@@ -78,15 +78,13 @@ class UserAuthenticationController < ApplicationController
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    @user.user_id = params.fetch("query_user_id")
     @user.name = params.fetch("query_name")
-    @user.review_count = params.fetch("query_review_count")
-    @user.average_stars = params.fetch("query_average_stars")
     
     if @user.valid?
       @user.save
 
-      redirect_to("/", { :notice => "User account updated successfully."})
+      # Replace the existing redirect with the path to the landlord index page
+      redirect_to("/landlord_index", { :notice => "User account updated successfully."})
     else
       render({ :template => "user_authentication/edit_profile_with_errors.html.erb" , :alert => @user.errors.full_messages.to_sentence })
     end
