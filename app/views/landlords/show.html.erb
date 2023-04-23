@@ -161,11 +161,9 @@
               <td><%= review.text %></td>
               <td><%= review.stars %></td>
               <td><%= time_ago_in_words(review.updated_at) %> ago</td>
-              <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/message_reviewer?review_id=<%= review.id %>'">
-                  Message Reviewer
-                </button>
-              </td>
+
+              <td><a href="/reviews/<%= review.id %>" class="btn btn-primary"> Details</a></td>
+            
             </tr>
           <% end %>
         </tbody>
