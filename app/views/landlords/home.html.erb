@@ -9,12 +9,15 @@
 
   <hr>
 
-<div class="col-md-3 mx-auto">
-  <%= form_with(url: "/landlords/", method: "get", local: true, html: { class: "form-inline" }) do %>
-    <div class="form-group">
-      <input type="text" class="form-control" name="search" placeholder="Search by landlord, address, or neighborhood..">
-    </div>
-    <%= submit_tag("Search", class: "btn btn-primary ml-2") %>
-  <% end %>
-  <small class="form-text text-muted">Enter a landlord name, address, or neighborhood to search</small>
+  <div class="col-md-6 mx-auto">
+  
+    <%= form_with(url: "/landlords/", method: "get", local: true, html: { class: "form-inline" }) do %>
+      <div class="form-group" style="width: 100%;">
+
+        <input type="text" class="form-control" name="search" placeholder="Search by landlord, address, or neighborhood.." style="width: 100%;">
+      </div>
+      <%= submit_tag("Search", class: "btn btn-primary ml-2") %>
+    <% end %>
+    <small class="form-text text-muted">Enter a landlord name, address, or neighborhood to search</small>
+  </div>
 </div>
