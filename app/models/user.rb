@@ -25,6 +25,7 @@ class User < ApplicationRecord
 
   has_many(:reviews, { :class_name => "Review", :foreign_key => "user_id", :dependent => :destroy })
 
+
   validates :user_role, presence: true, inclusion: { in: %w(renter landlord) }
   validate :debug_user_role
 
