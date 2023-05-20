@@ -14,8 +14,9 @@ gem 'sprockets', '< 4'
 gem 'sassc-rails'
 gem 'faker'
 gem 'will_paginate'
-gem 'bootstrap'
+gem 'bootstrap', '~> 5.1.3'
 gem 'mail'
+gem 'bootstrap_pagination'
 
 group :development do
   gem 'htmlbeautifier'
