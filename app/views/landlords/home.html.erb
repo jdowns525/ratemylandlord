@@ -21,3 +21,37 @@
     <small class="form-text text-muted">Enter a landlord name, address, or neighborhood to search</small>
   </div>
 </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Stars</th>
+      <th>Occupancy Date</th>
+      <th>Vacancy Date</th>
+      <th>Review Text</th>
+      <th>Useful</th>
+      <th>City</th>
+      <th>Maintenance & Repairs</th>
+      <th>Respectfulness</th>
+      <th>Responsiveness</th>
+      <!-- add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.stars %></td>
+        <td><%= review.date_occupancy %></td>
+        <td><%= review.date_vacancy %></td>
+        <td><%= review.text %></td>
+        <td><%= review.useful %></td>
+        <td><%= review.city %></td>
+        <td><%= review.maintenance_and_repairs %></td>
+        <td><%= review.respectfulness %></td>
+        <td><%= review.responsiveness %></td>
+        <!-- add more fields as needed -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @reviews %>
