@@ -1,20 +1,24 @@
 class ApplicationController < ActionController::Base
-  before_action :load_current_user, :force_user_sign_in
+  before_action(:load_current_user)
+  before_action(:force_user_sign_in)
+  
   helper_method :current_user
 
   def load_current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+    the_id = session[:user_id]
+    @current_user = User.where({ :id => the_id }).first
   end
 
   def current_user
     @current_user
   end
   
-  ALLOWED_PATHS_PATTERN = /\A\/(landlords(\/\d+)?|landlords\/?|support)?\z/.freeze
-  
   def force_user_sign_in
-    unless session[:user_id] || request.path.match?(ALLOWED_PATHS_PATTERN)
-      redirect_to "/user_sign_in", alert: "You have to sign in first."
+    allowed_paths_pattern = /\A\/(landlords(\/\d+)?|landlords\/?|support)?\z/
+  
+    unless session[:user_id] || request.path.match?(allowed_paths_pattern)
+      redirect_to("/user_sign_in", { :alert => "You have to sign in first." })
     end
   end  
 end
+
