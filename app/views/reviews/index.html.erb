@@ -52,7 +52,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <hr>
 
@@ -85,74 +85,74 @@
                         <div class="col-md-8">
                             <input type="date" class="form-control" id="date_occupancy_box" name="query_date_occupancy" value="<%= Time.now.strftime('%Y-%m-%d') %>">
                         </div>
+                        </div>
+                     <div class="mb-3 row">
+                        <label for="text_box" class="col-md-4 col-form-label">Description</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+                        </div>
                     </div>
                     <div class="mb-3 row">
-    <label for="text_box" class="col-md-4 col-form-label">Description</label>
-    <div class="col-md-8">
-        <textarea class="form-control" id="text_box" name="query_text" rows="3"></textarea>
+                        <label for="city_box" class="col-md-4 col-form-label">City</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="city_box" name="query_city">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="landlord_id_box" class="col-md-4 col-form-label">Landlord ID</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="stars_box" class="col-md-4 col-form-label">Stars</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="stars_box" name="query_stars">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="useful_box" class="col-md-4 col-form-label">Useful?</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="useful_box" name="query_useful">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="maintenance_box" class="col-md-4 col-form-label">Maintenance?</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="maintenance_box" name="query_maintenance_and_repairs">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="respect_box" class="col-md-4 col-form-label">Respect?</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="respect_box" name="query_respectfulness">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="response_box" class="col-md-4 col-form-label">Response?</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="response_box" name="query_responsiveness">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Create Review</button>
+                    </div>
+                </form>
+         </div>
+        </div>
     </div>
-</div>
-<div class="mb-3 row">
-    <label for="city_box" class="col-md-4 col-form-label">City</label>
-    <div class="col-md-8">
-        <input type="text" class="form-control" id="city_box" name="query_city">
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="landlord_id_box" class="col-md-4 col-form-label">Landlord ID</label>
-    <div class="col-md-8">
-        <input type="text" class="form-control" id="landlord_id_box" name="query_landlord_id">
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="stars_box" class="col-md-4 col-form-label">Stars</label>
-    <div class="col-md-8">
-        <input type="text" class="form-control" id="stars_box" name="query_stars">
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="useful_box" class="col-md-4 col-form-label">Useful?</label>
-    <div class="col-md-8">
-        <select class="form-control" id="useful_box" name="query_useful">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="maintenance_box" class="col-md-4 col-form-label">Maintenance?</label>
-    <div class="col-md-8">
-        <select class="form-control" id="maintenance_box" name="query_maintenance_and_repairs">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="respect_box" class="col-md-4 col-form-label">Respect?</label>
-    <div class="col-md-8">
-        <select class="form-control" id="respect_box" name="query_respectfulness">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="response_box" class="col-md-4 col-form-label">Response?</label>
-    <div class="col-md-8">
-        <select class="form-control" id="response_box" name="query_responsiveness">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-    </div>
-</div>
-<div class="text-center">
-    <button type="submit" class="btn btn-primary">Create Review</button>
-</div>
-</form>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
