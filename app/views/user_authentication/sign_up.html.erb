@@ -2,12 +2,11 @@
   <div class="card">
     <div class="card-body">
       <form action="/insert_user" method="post">
-
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
+        
         <div class="mb-2 col-md-6 mx-auto">
           <label for="email_box" class="form-label">Email</label>
-          <input id="email_box" name="query_email" placeholder="Choose a email..." type="text" class="form-control form-control-sm" aria-describedby="emailHelp">
+          <input id="email_box" name="query_email" placeholder="Choose an email..." type="text" class="form-control form-control-sm" aria-describedby="emailHelp">
         </div>
 
         <div class="mb-2 col-md-6 mx-auto">
@@ -24,58 +23,42 @@
           <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
           <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password" class="form-control form-control-sm">
         </div>
-        <!-- Add role selection -->
-            <div class="mb-2 col-md-6 mx-auto">
-            <label class="form-label">Role</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="user_role" id="role_renter" value="renter" checked>
-              <label class="form-check-label" for="role_renter">Renter</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="user_role" id="role_landlord" value="landlord">
-              <label class="form-check-label" for="role_landlord">Landlord</label>
-            </div>
+
+        <div class="mb-2 col-md-6 mx-auto">
+          <label class="form-label">Role</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="user_role" id="role_renter" value="renter" checked>
+            <label class="form-check-label" for="role_renter">Renter</label>
           </div>
-
-          <!-- Add landlord type selection and wrap in a div -->
-          <div class="mb-2 col-md-6 mx-auto" id="landlord_options" style="display:none;">
-            <label class="form-label">Landlord Type</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="landlord_type" id="landlord_type_private" value="private_landlord">
-              <label class="form-check-label" for="landlord_type_private">Private Landlord</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="landlord_type" id="landlord_type_management" value="management_company">
-              <label class="form-check-label" for="landlord_type_management">Management Company</label>
-            </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="user_role" id="role_landlord" value="landlord">
+            <label class="form-check-label" for="role_landlord">Landlord</label>
           </div>
-
-
-        <div class="container min-vh-50 d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary"> Sign up</button>
         </div>
 
+        <div class="mb-2 col-md-6 mx-auto" id="landlord_options" style="display:none;">
+          <label class="form-label">Landlord Type</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="landlord_type" id="landlord_type_private" value="private_landlord">
+            <label class="form-check-label" for="landlord_type_private">Private Landlord</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="landlord_type" id="landlord_type_management" value="management_company">
+            <label class="form-check-label" for="landlord_type_management">Management Company</label>
+          </div>
+        </div>
+
+        <div class="container min-vh-50 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+          <%= link_to "Sign in", "/user_sign_in", class: "btn btn-primary btn-block" %>
+        </div>
       </form>
     </div>
   </div>
 </div>
 
-
-  
-
-
-  <footer>
-   <div class="mt-2 col-md-6 mx-auto">
-  <p>
-    or,<%= link_to "Sign in", "/user_sign_in", class: "btn btn-primary" %>
-    <%= raw('&nbsp;&nbsp;') %>
-  </p>
-</div>
-
-  </footer>
-</div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     var landlordRadio = document.getElementById('role_landlord');
     var renterRadio = document.getElementById('role_renter');
     var landlordOptions = document.getElementById('landlord_options');
@@ -88,3 +71,5 @@
     renterRadio.addEventListener('change', updateLandlordOptionsVisibility);
   });
 </script>
+
+</div>
