@@ -13,6 +13,8 @@ gem 'rails', '~> 7.1.5', '>= 7.1.5.1'
 gem 'faker'
 gem 'will_paginate'
 gem 'mail'
+gem 'sprockets-rails', '>= 3.4.2'
+
 
 group :development do
   gem 'htmlbeautifier'

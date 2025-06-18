@@ -370,6 +370,14 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
+    sprockets (4.2.2)
+      concurrent-ruby (~> 1.0)
+      logger
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     stringio (3.1.7)
     table_print (1.5.7)
@@ -440,6 +448,7 @@ DEPENDENCIES
   rufo
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails (>= 3.4.2)
   sqlite3 (~> 1.4.1)
   table_print
   web-console (>= 3.3.0)
