@@ -445,7 +445,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mail
-  nokogiri (~> 1.18.8)
+  nokogiri (~> 1.13)
   pg
   pry-rails
   puma (~> 4.1)
