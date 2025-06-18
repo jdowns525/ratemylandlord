@@ -1,22 +1,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '3.2.3'
 
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'http'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
-gem "nokogiri", ">= 1.10.8"
+gem "nokogiri", ">= 1.15.5"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-gem 'sprockets', '< 4'
-gem 'sassc-rails'
 gem 'faker'
 gem 'will_paginate'
-#gem 'bootstrap', '~> 5.1.3'
 gem 'mail'
-#gem 'bootstrap_pagination'
 
 group :development do
   gem 'htmlbeautifier'
@@ -42,9 +38,8 @@ group :development do
   gem 'annotate'
   gem 'better_errors', '2.6'
   gem 'binding_of_caller'
-  gem "draft_generators", :git => "https://github.com/firstdraft/draft_generators"
+  gem "draft_generators", git: "https://github.com/firstdraft/draft_generators"
   gem 'rails_db', '2.3.1'
-
 end
 
 group :test do

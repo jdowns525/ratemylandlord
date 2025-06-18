@@ -191,14 +191,14 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
+    mini_portile2 (2.8.9)
     minitest (5.15.0)
     msgpack (1.5.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.18.8)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oj (3.13.11)
     orm_adapter (0.5.0)
@@ -211,7 +211,7 @@ GEM
     public_suffix (4.0.7)
     puma (4.3.12)
       nio4r (~> 2.0)
-    racc (1.6.0)
+    racc (1.8.1)
     rack (2.2.3)
     rack-protection (2.2.0)
       rack
@@ -290,14 +290,6 @@ GEM
     rspec-support (3.11.0)
     ruby2_keywords (0.0.5)
     rufo (0.13.0)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -373,7 +365,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mail
-  nokogiri (>= 1.10.8)
+  nokogiri (>= 1.15.5)
   pg
   pry-rails
   puma (~> 4.1)
@@ -382,10 +374,8 @@ DEPENDENCIES
   rspec-html-matchers
   rspec-rails
   rufo
-  sassc-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  sprockets (< 4)
   sqlite3 (~> 1.4.1)
   table_print
   web-console (>= 3.3.0)
@@ -394,7 +384,7 @@ DEPENDENCIES
   will_paginate
 
 RUBY VERSION
-   ruby 2.7.3p183
+   ruby 3.2.3p157
 
 BUNDLED WITH
    2.1.4
