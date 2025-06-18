@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# exit on error
 set -o errexit
 
-# Force Nokogiri to build from source to avoid GLIBC issues on Render
+# Force a clean bundle environment
 bundle config set force_ruby_platform true
+bundle install --without development test
 
-bundle install
+# Explicitly clear assets and rebuild them
+bundle exec rake assets:clobber
 bundle exec rake assets:precompile
-bundle exec rake assets:clean
+
+# Migrate DB explicitly (safety measure)
 bundle exec rake db:migrate
