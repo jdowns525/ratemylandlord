@@ -14,7 +14,7 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-center">
-            <%= form_with(url: "/landlords/", method: "get", local: true, html: { class: "form-inline" }) do %>
+            <%= form_with(url: "/landlords", method: "get", local: true, html: { class: "form-inline" }) do %>
               <div class="input-group">
                 <input type="text" class="form-control" name="search" placeholder="Search by landlord, address, or neighborhood...">
                 <div class="input-group-append">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-<div class="container">
+  <!-- ✅ Moved reviews table inside same container -->
   <div class="row">
     <div class="col-lg-12">
       <div class="card">

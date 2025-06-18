@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :messages, only: [:create]
 
-  # Custom route for landlords#home
+  # Optional: Custom access to landlords#home
   get 'landlords/home', to: 'landlords#home', as: 'landlords_home'
 
   # Search route
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # User Authentication
   get 'user_sign_up', to: 'user_authentication#sign_up_form'
   post 'insert_user', to: 'user_authentication#create'
-  
+
   get 'edit_user_profile', to: 'user_authentication#edit_profile_form'
   post 'modify_user', to: 'user_authentication#update'
   get 'cancel_user_account', to: 'user_authentication#destroy'
