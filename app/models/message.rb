@@ -12,8 +12,8 @@
 #
 class Message < ApplicationRecord
   validates :content, presence: true
-  
+
   belongs_to :user
-  belongs_to :receiver, class_name: 'User'
+  belongs_to :receiver, class_name: "User"
   belongs_to :review
 end

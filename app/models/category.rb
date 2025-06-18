@@ -9,5 +9,5 @@
 #  landlord_id :integer
 #
 class Category < ApplicationRecord
-  belongs_to(:landlord, { :required => true, :class_name => "Landlord", :foreign_key => "landlord_id" })
+  belongs_to :landlord, required: true, class_name: "Landlord", foreign_key: "landlord_id"
 end

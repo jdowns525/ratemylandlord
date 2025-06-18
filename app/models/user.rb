@@ -16,15 +16,14 @@
 #  user_id         :integer
 #
 class User < ApplicationRecord
-  validates :email, :uniqueness => { :case_sensitive => false }
-  validates :email, :presence => true
+  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, presence: true
   has_secure_password
+
   has_many :landlords
   has_many :messages
-  has_many :received_messages, class_name: 'Message', foreign_key: 'receiver_id'
-
-  has_many(:reviews, { :class_name => "Review", :foreign_key => "user_id", :dependent => :destroy })
-
+  has_many :received_messages, class_name: "Message", foreign_key: "receiver_id"
+  has_many :reviews, class_name: "Review", foreign_key: "user_id", dependent: :destroy
 
   validates :user_role, presence: true, inclusion: { in: %w(renter landlord) }
   validate :debug_user_role
@@ -34,7 +33,4 @@ class User < ApplicationRecord
   def debug_user_role
     Rails.logger.debug("user_role in model: #{user_role}")
   end
-
-  # Remove this line, as it validates a nonexistent attribute
-  # validates :role, presence: true
 end
