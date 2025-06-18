@@ -1,89 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Landlord Ratings</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>My Landlord Ratings</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <!-- Bootstrap JS Bundle (for dropdowns, modals, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        main {
-            flex: 1;
-        }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        .navbar {
-            background: linear-gradient(to right, #007bff, #0096ff);
-            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-        }
+  <!-- Your custom stylesheets -->
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 
-        .navbar-logo {
-            height: 70px;
-            width: auto;
-            transition: all 0.5s ease;
-        }
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        .navbar a.nav-link {
-            color: #ffffff;
-            transition: all 0.3s ease;
-        }
+    main {
+      flex: 1;
+    }
 
-        .navbar a.nav-link:hover, .navbar a.nav-link:focus {
-            color: #ffd700;
-            text-decoration: none;
-        }
+    .navbar {
+      background: linear-gradient(to right, #007bff, #0096ff);
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    }
 
-        .footer {
-            width: 100%;
-            height: 60px;
-            line-height: 60px;
-            background: linear-gradient(to right, #f5f5f5, #ddd);
-            box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .navbar-logo {
+      height: 70px;
+      width: auto;
+      transition: all 0.5s ease;
+    }
 
-        .footer .text-muted {
-            color: #333;
-        }
+    .navbar a.nav-link {
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
 
-        @media (max-width: 768px) {
-            .nav-item {
-                width: auto;
-                font-size: 16px;
-            }
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link:focus {
+      color: #ffd700;
+      text-decoration: none;
+    }
 
-            .btn {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-        }
-    </style>
+    .footer {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      background: linear-gradient(to right, #f5f5f5, #ddd);
+      box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .footer .text-muted {
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .nav-item {
+        width: auto;
+        font-size: 16px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg <% session[:user_id].nil? ? 'navbar-light bg-light' : 'navbar-dark bg-dark' %>">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/" class="navbar-logo">MLR</a>
+      <a class="navbar-brand navbar-logo" href="/">MLR</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-     
-              <div class="collapse navbar-collapse justify-content-end" id="navbarColor02">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarColor02">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
@@ -100,7 +105,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/support"><i class="fas fa-question-circle"></i> Support</a>
           </li>
-            <% if session[:user_id].nil? %>
+          <% if session[:user_id].nil? %>
             <li class="nav-item">
               <a class="nav-link" href="/user_sign_in"><i class="fas fa-sign-in-alt"></i> Sign In</a>
             </li>
@@ -124,15 +129,11 @@
   </nav>
 
   <% if notice.present? %>
-  <div class="alert alert-success">
-    <%= notice %>
-  </div>
-  <% end%>
+    <div class="alert alert-success text-center"><%= notice %></div>
+  <% end %>
 
   <% if alert.present? %>
-  <div class="alert alert-danger">
-    <%= alert %>
-  </div>
+    <div class="alert alert-danger text-center"><%= alert %></div>
   <% end %>
 
   <main role="main" class="container mt-3">
@@ -143,11 +144,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <p>&copy; 2023, Nexus Dynamic</p>
+          <p class="text-muted">&copy; 2023, Nexus Dynamic</p>
         </div>
       </div>
     </div>
   </footer>
 </body>
 </html>
-
