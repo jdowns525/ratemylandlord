@@ -2,20 +2,19 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.3'
-
+gem 'rails', '~> 6.1.7'
+gem 'puma', '~> 6.4'
+gem 'rack', '~> 2.2'
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'http'
 gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 4.1'
-gem 'nokogiri', '~> 1.13', platforms: :ruby
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-gem 'faker'
-gem 'will_paginate'
-gem 'mail'
-gem 'sprockets', '~> 4.2'
-gem 'sprockets-rails', '~> 3.4'
+gem 'nokogiri', '>= 1.10.8'
+gem 'ruby-openai'
 gem 'sassc-rails'
+gem 'sprockets', '~> 4.2'
+gem 'faker'
+gem 'will_paginate', '~> 3.3'
 
 
 group :development do
@@ -40,10 +39,10 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'better_errors', '2.6'
+  gem 'better_errors', '~> 2.6'
   gem 'binding_of_caller'
-  gem "draft_generators", git: "https://github.com/firstdraft/draft_generators"
-  gem 'rails_db', '2.3.1'
+  gem 'draft_generators', github: 'firstdraft/draft_generators', branch: 'winter-2020'
+  gem 'rails_db', '~> 2.3'
 end
 
 group :test do
